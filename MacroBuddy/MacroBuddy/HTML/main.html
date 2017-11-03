@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>MacroBuddy - A Personal Nutritionist</title>
+
+    <link rel="stylesheet" href="../CSS/main.css">
+
+    <!-- Load jQuery CDN first -->
+    <script src="http://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <!-- If CDN fails to load, load the local version -->
+    <script>window.jQuery || document.write('<script src="../js/jquery-3.2.1.js"><\/script>')</script>
+
+    <script src="../JS/main.js"></script>
+</head>
+
+<body>
+    <center>
+        <img src="../Images/logo.png" id="logo" />
+    </center>
+
+    <h3>Welcome to MacroBuddy, your own personal nutritionist!</h3>
+
+    <p>
+        Have you ever tried coming up with a diet plan that works for you? How many of them showed you results, or how many did you
+        stick with long enough to see them? Do you know what three nutrient bases make up your macronutrients, and how
+        much of each you should be eating?
+    </p>
+    <p>
+        Well, MacroBuddy is here to alleviate you from all the calculations and formulae you'll need to go through to figure out
+        your macronutrients. MacroBuddy is your one-stop location to get all your personalized macronutrition information
+        to get you prepared and on your way to meal prepping like the pros! All it takes is some basic information and
+        MacroBuddy will send you on your way!
+    </p>
+    <br />
+    <center>
+        <p>Let's start with some basic information!</p>
+
+        <table id="infoTable">
+            <tr>
+                <td class="title">Name:</td>
+                <td>
+                    <input id="inputName" type="text" size=15 placeholder="John Smith" />
+                </td>
+            </tr>
+            <tr>
+                <td class="title">Gender:</td>
+                <td>
+                    <select id="selectGender">
+                        <option value=""></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">Age:</td>
+                <td>
+                    <input id="inputAge" type="text" size=6 placeholder="{in years}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="title">Height:</td>
+                <td>
+                    <input id="inputHeight" type="text" size=10 placeholder="Select unit -->" readonly="readonly" />
+                </td>
+                <td>
+                    <center>
+                        <label>
+                            <input name="radioHeight" type="radio" onclick="updateHeightPlaceholder()" />Inches (in)
+                        </label>
+                        <label>
+                            <input name="radioHeight" type="radio" onclick="updateHeightPlaceholder()" />Centimeters (cm)
+                        </label>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">Weight:</td>
+                <td>
+                    <input id="inputWeight" type="text" size=10 placeholder="Select unit -->" readonly="readonly" />
+                </td>
+                <td>
+                    <center>
+                        <label>
+                            <input name="radioWeight" type="radio" onclick="updateWeightPlaceholder()" />Pounds (lb)
+                        </label>
+                        <label>
+                            <input name="radioWeight" type="radio" onclick="updateWeightPlaceholder()" />Kilograms (kg)
+                        </label>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td class="title">Amount of Exercise:</td>
+                <td>
+                    <select id="selectAmountOfExercise" onchange="if(this.selectedIndex) updateAmountOfExerciseDescription();">
+                        <option value=""></option>
+                        <option value="Sedentary">Sedentary</option>
+                        <option value="Lightly Active">Lightly Active</option>
+                        <option value="Moderately Active">Moderately Active</option>
+                        <option value="Very Active">Very Active</option>
+                        <option value="Extremely Active">Extremely Active</option>
+                    </select>
+                </td>
+                <td id="amountOfExerciseDescription"></td>
+            </tr>
+            <tr>
+                <td colspan=3 style="padding: 10px">
+                    <center>
+                        <input type="button" value="Go, MacroBuddy!" onclick="createProfile()" />
+                    </center>
+                </td>
+            </tr>
+        </table>
+
+    </center>
+
+</body>
+
+</html>

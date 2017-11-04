@@ -224,6 +224,11 @@ var calculateBMR = function(gender, weight, height, age) {
     }
 }
 
+// Calculate TDEE
+var calculateTDEE = function(bmr, activityFactor) {
+    return bmr * activityFactor;
+}
+
 // Calculate Protein
 var calculateProtein = function(fitnessGoal, weight) {
     switch (fitnessGoal) {

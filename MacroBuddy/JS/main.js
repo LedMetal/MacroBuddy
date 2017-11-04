@@ -182,7 +182,7 @@ var activityFactorVerification = function(activityFactor) {
     } else {
         alert("Please select the amount of exercise that most resembles your current lifestyle");
 
-        $('selectAmountOfExercise')[0].focus();
+        $('#selectAmountOfExercise').focus();
         return false;
     }
 }
@@ -203,6 +203,18 @@ var findActivityFactor = function(activityFactor) {
     }
 }
 
+// Verify a legal input for Fitness Goal
+var fitnessGoalVerification = function(fitnessGoal) {
+    if (fitnessGoal != "") {
+        return true;
+    } else {
+        alert("Please select the fitness goal that you have");
+
+        $('#selectFitnessGoal').focus();
+        return false;
+    }
+}
+
 // Function called onClick of button
 var createProfile = function() {
     var _name = $('#inputName')[0].value;
@@ -211,9 +223,10 @@ var createProfile = function() {
     var _height = $('#inputHeight')[0].value;
     var _weight = $('#inputWeight')[0].value;
     var _activityFactor = $('#selectAmountOfExercise')[0].value;
+    var _fitnessGoal = $('#selectFitnessGoal')[0].value;
 
     // Validate all input
-    if (nameVerification(_name) && genderVerification(_gender) && ageVerification(_age) && heightVerification(_height) && weightVerification(_weight) && activityFactorVerification(_activityFactor)) {
+    if (nameVerification(_name) && genderVerification(_gender) && ageVerification(_age) && heightVerification(_height) && weightVerification(_weight) && activityFactorVerification(_activityFactor) && fitnessGoalVerification(_fitnessGoal)) {
         // Create userProfile object
         var userProfile = {
             name: _name,

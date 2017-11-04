@@ -231,6 +231,9 @@ var createProfile = function() {
             userProfile.bmr = 655 + (4.35 * userProfile.weight) + (4.7 * userProfile.height) - (4.7 * userProfile.age);
         }
 
+        // Calculate TDEE
+        userProfile.tdee = userProfile.bmr * userProfile.activityFactor;
+
         // Stringify userProfile object
         var userProfile_JSON = JSON.stringify(userProfile);
         // Set localStorage for userProfile_JSON

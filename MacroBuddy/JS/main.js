@@ -234,7 +234,8 @@ var createProfile = function() {
             age: _age,
             height: toInches(_height),
             weight: toPounds(_weight),
-            activityFactor: findActivityFactor(_activityFactor)
+            activityFactor: findActivityFactor(_activityFactor),
+            fitnessGoal: _fitnessGoal
         }
 
         // Calculate BMR

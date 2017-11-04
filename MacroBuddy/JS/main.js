@@ -224,6 +224,13 @@ var createProfile = function() {
             activityFactor: findActivityFactor(_activityFactor)
         }
 
+        // Calculate BMR
+        if (userProfile.gender == "Male") {
+            userProfile.bmr = 66 + (6.23 * userProfile.weight) + (12.7 * userProfile.height) - (6.8 * userProfile.age);
+        } else if (userProfile.gender == "Female") {
+            userProfile.bmr = 655 + (4.35 * userProfile.weight) + (4.7 * userProfile.height) - (4.7 * userProfile.age);
+        }
+
         // Stringify userProfile object
         var userProfile_JSON = JSON.stringify(userProfile);
         // Set localStorage for userProfile_JSON

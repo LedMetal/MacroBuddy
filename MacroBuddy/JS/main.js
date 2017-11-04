@@ -212,7 +212,9 @@ var createProfile = function() {
     var _weight = $('#inputWeight')[0].value;
     var _activityFactor = $('#selectAmountOfExercise')[0].value;
 
+    // Validate all input
     if (nameVerification(_name) && genderVerification(_gender) && ageVerification(_age) && heightVerification(_height) && weightVerification(_weight) && activityFactorVerification(_activityFactor)) {
+        // Create userProfile object
         var userProfile = {
             name: _name,
             gender: _gender,
@@ -222,16 +224,19 @@ var createProfile = function() {
             activityFactor: findActivityFactor(_activityFactor)
         }
 
+        // Stringify userProfile object
         var userProfile_JSON = JSON.stringify(userProfile);
-
+        // Set localStorage for userProfile_JSON
         localStorage.setItem("userProfile", userProfile_JSON);
 
+        // DEBUG - Display userProfile in browser console
         console.log(userProfile);
     }
 }
 
 // jQuery document.ready function
 $(function() {
+    // Checks if fields have been blurred empty (left focus without input)
     $('#inputName, #selectGender, #inputAge, #selectAmountOfExercise').blur(function() {
         if ($(this).val() == "") {
             $(this).css('border', 'solid 1px red');

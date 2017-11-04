@@ -248,6 +248,22 @@ var createProfile = function() {
         // Calculate TDEE
         userProfile.tdee = userProfile.bmr * userProfile.activityFactor;
 
+        // Calculate Daily Calories Goal
+        switch (userProfile.fitnessGoal) {
+            case "Weight Loss":
+                userProfile.dailyCalories = userProfile.tdee - 500;
+
+                break;
+            case "Maintain":
+                userProfile.dailyCalories = userProfile.tdee;
+
+                break;
+            case "Mass Gain":
+                userProfile.dailyCalories = userProfile.tdee + 500;
+
+                break;
+        }
+
         // Stringify userProfile object
         var userProfile_JSON = JSON.stringify(userProfile);
         // Set localStorage for userProfile_JSON

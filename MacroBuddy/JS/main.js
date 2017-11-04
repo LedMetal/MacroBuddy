@@ -215,11 +215,30 @@ var fitnessGoalVerification = function(fitnessGoal) {
     }
 }
 
+// Calculate BMR
 var calculateBMR = function(gender, weight, height, age) {
     if (gender == "Male") {
         return 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age);
     } else if (gender == "Female") {
         return 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age);
+    }
+}
+
+// Calculate Protein
+var calculateProtein = function(fitnessGoal, weight) {
+    switch (fitnessGoal) {
+        case "Weight Loss":
+            return 1.0 * weight;
+
+            break;
+        case "Maintain":
+            return 1.2 * weight;
+
+            break;
+        case "Mass Gain":
+            return 1.5 * weight;
+
+            break;
     }
 }
 
@@ -244,7 +263,8 @@ var createProfile = function() {
             weight: toPounds(_weight),
             activityFactor: findActivityFactor(_activityFactor),
             fitnessGoal: _fitnessGoal,
-            bmr: calculateBMR(_gender, toPounds(_weight), toInches(_height), _age)
+            bmr: calculateBMR(_gender, toPounds(_weight), toInches(_height), _age),
+            protein: calculateProtein(_fitnessGoal, toPounds(_weight))
         }
 
         // Calculate TDEE
@@ -267,9 +287,8 @@ var createProfile = function() {
         }
 
         // Calculate Protein, Fat and Carbohydate Allowances
-        userProfile.protein = 1.2 * userProfile.weight;
         userProfile.fat = 0.4 * userProfile.weight;
-        userProfile.carbohydrate = userProfile.dailyCalories - ((userProfile.protein * 4) + (userProfile.fat * 9));
+        userProfile.carbohydrate = (userProfile.dailyCalories - ((userProfile.protein * 4) + (userProfile.fat * 9))) / 4;
 
         // Stringify userProfile object
         var userProfile_JSON = JSON.stringify(userProfile);

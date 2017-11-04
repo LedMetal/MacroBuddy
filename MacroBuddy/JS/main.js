@@ -229,6 +229,24 @@ var calculateTDEE = function(bmr, activityFactor) {
     return bmr * activityFactor;
 }
 
+// Calculate Daily Calories Goal
+var calculateDailyCalories = function(fitnessGoal, tdee) {
+    switch (fitnessGoal) {
+        case "Weight Loss":
+            return tdee - 500;
+
+            break;
+        case "Maintain":
+            return tdee;
+
+            break;
+        case "Mass Gain":
+            return tdee + 500;
+
+            break;
+    }
+}
+
 // Calculate Protein
 var calculateProtein = function(fitnessGoal, weight) {
     switch (fitnessGoal) {
@@ -270,23 +288,8 @@ var createProfile = function() {
             fitnessGoal: _fitnessGoal,
             bmr: calculateBMR(_gender, toPounds(_weight), toInches(_height), _age),
             tdee: calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor),
+            dailyCalories: calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor)),
             protein: calculateProtein(_fitnessGoal, toPounds(_weight))
-        }
-
-        // Calculate Daily Calories Goal
-        switch (userProfile.fitnessGoal) {
-            case "Weight Loss":
-                userProfile.dailyCalories = userProfile.tdee - 500;
-
-                break;
-            case "Maintain":
-                userProfile.dailyCalories = userProfile.tdee;
-
-                break;
-            case "Mass Gain":
-                userProfile.dailyCalories = userProfile.tdee + 500;
-
-                break;
         }
 
         // Calculate Protein, Fat and Carbohydate Allowances

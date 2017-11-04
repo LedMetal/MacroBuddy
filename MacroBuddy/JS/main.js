@@ -264,6 +264,9 @@ var createProfile = function() {
                 break;
         }
 
+        // Calculate Protein Allowance
+        userProfile.protein = 1.2 * userProfile.weight;
+
         // Stringify userProfile object
         var userProfile_JSON = JSON.stringify(userProfile);
         // Set localStorage for userProfile_JSON

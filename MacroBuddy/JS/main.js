@@ -269,11 +269,9 @@ var createProfile = function() {
             activityFactor: findActivityFactor(_activityFactor),
             fitnessGoal: _fitnessGoal,
             bmr: calculateBMR(_gender, toPounds(_weight), toInches(_height), _age),
+            tdee: calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor),
             protein: calculateProtein(_fitnessGoal, toPounds(_weight))
         }
-
-        // Calculate TDEE
-        userProfile.tdee = userProfile.bmr * userProfile.activityFactor;
 
         // Calculate Daily Calories Goal
         switch (userProfile.fitnessGoal) {

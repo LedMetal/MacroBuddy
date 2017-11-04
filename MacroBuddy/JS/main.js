@@ -247,7 +247,7 @@ var createProfile = function() {
 // jQuery document.ready function
 $(function() {
     // Checks if fields have been blurred empty (left focus without input)
-    $('#inputName, #selectGender, #inputAge, #selectAmountOfExercise').blur(function() {
+    $('#inputName, #selectGender, #inputAge, #selectAmountOfExercise, #selectFitnessGoal').blur(function() {
         if ($(this).val() == "") {
             $(this).css('border', 'solid 1px red');
         } else {

@@ -270,6 +270,9 @@ var createProfile = function() {
         // Calculate Fat Allowance
         userProfile.fat = 0.4 * userProfile.weight;
 
+        // Calculate Carbohydrate Allowance
+        userProfile.carbohydrate = userProfile.dailyCalories - ((userProfile.protein * 4) + (userProfile.fat * 9));
+
         // Stringify userProfile object
         var userProfile_JSON = JSON.stringify(userProfile);
         // Set localStorage for userProfile_JSON

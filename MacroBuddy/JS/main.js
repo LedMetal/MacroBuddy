@@ -251,11 +251,11 @@ var calculateDailyCalories = function(fitnessGoal, tdee) {
 var calculateProtein = function(fitnessGoal, weight) {
     switch (fitnessGoal) {
         case "Weight Loss":
-            return 2.35 * weight;
+            return 1.71 * weight;
 
             break;
         case "Maintain":
-            return 1.57 * weight;
+            return 1.35 * weight;
 
             break;
         case "Mass Gain":
@@ -269,11 +269,11 @@ var calculateProtein = function(fitnessGoal, weight) {
 var calculateFat = function(fitnessGoal, weight) {
     switch (fitnessGoal) {
         case "Weight Loss":
-            return 0.81 * weight;
+            return 0.59 * weight;
 
             break;
         case "Maintain":
-            return 1.57 * weight;
+            return 1.35 * weight;
 
             break;
         case "Mass Gain":

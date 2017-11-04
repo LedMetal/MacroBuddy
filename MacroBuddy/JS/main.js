@@ -247,7 +247,7 @@ var calculateDailyCalories = function(fitnessGoal, tdee) {
     }
 }
 
-// Calculate Protein
+// Calculate Protein Allowance
 var calculateProtein = function(fitnessGoal, weight) {
     switch (fitnessGoal) {
         case "Weight Loss":
@@ -263,6 +263,11 @@ var calculateProtein = function(fitnessGoal, weight) {
 
             break;
     }
+}
+
+// Calculate Fat Allowance
+var calculateFat = function(weight) {
+    return 0.4 * weight;
 }
 
 // Function called onClick of button
@@ -289,11 +294,11 @@ var createProfile = function() {
             bmr: calculateBMR(_gender, toPounds(_weight), toInches(_height), _age),
             tdee: calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor),
             dailyCalories: calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor)),
-            protein: calculateProtein(_fitnessGoal, toPounds(_weight))
+            protein: calculateProtein(_fitnessGoal, toPounds(_weight)),
+            fat: calculateFat(toPounds(_weight))
         }
 
         // Calculate Protein, Fat and Carbohydate Allowances
-        userProfile.fat = 0.4 * userProfile.weight;
         userProfile.carbohydrate = (userProfile.dailyCalories - ((userProfile.protein * 4) + (userProfile.fat * 9))) / 4;
 
         // Stringify userProfile object

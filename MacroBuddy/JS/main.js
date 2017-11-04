@@ -269,7 +269,7 @@ var calculateProtein = function(fitnessGoal, weight) {
 var calculateFat = function(fitnessGoal, weight) {
     switch (fitnessGoal) {
         case "Weight Loss":
-            return 0.2 * weight;
+            return 0.3 * weight;
 
             break;
         case "Maintain":
@@ -277,7 +277,7 @@ var calculateFat = function(fitnessGoal, weight) {
 
             break;
         case "Mass Gain":
-            return 0.6 * weight;
+            return 0.5 * weight;
 
             break;
     }
@@ -314,7 +314,7 @@ var createProfile = function() {
             dailyCalories: calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor)),
             protein: calculateProtein(_fitnessGoal, toPounds(_weight)),
             fat: calculateFat(_fitnessGoal, toPounds(_weight)),
-            carbohydrate: calculateCarb(calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor)), calculateProtein(_fitnessGoal, toPounds(_weight)), calculateFat(toPounds(_weight)))
+            carbohydrate: calculateCarb(calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor)), calculateProtein(_fitnessGoal, toPounds(_weight)), calculateFat(_fitnessGoal, toPounds(_weight)))
         }
 
         // Stringify userProfile object

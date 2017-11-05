@@ -251,15 +251,15 @@ var calculateDailyCalories = function(fitnessGoal, tdee) {
 var calculateProtein = function(fitnessGoal, dailyCalories) {
     switch (fitnessGoal) {
         case "Weight Loss":
-            return 0.45 * dailyCalories;
+            return (0.45 * dailyCalories) / 4;
 
             break;
         case "Maintain":
-            return 0.3 * dailyCalories;
+            return (0.3 * dailyCalories) / 4;
 
             break;
         case "Mass Gain":
-            return 0.3 * dailyCalories;
+            return (0.3 * dailyCalories) / 4;
 
             break;
     }
@@ -269,15 +269,15 @@ var calculateProtein = function(fitnessGoal, dailyCalories) {
 var calculateFat = function(fitnessGoal, dailyCalories) {
     switch (fitnessGoal) {
         case "Weight Loss":
-            return 0.35 * dailyCalories;
+            return (0.35 * dailyCalories) / 9;
 
             break;
         case "Maintain":
-            return 0.3 * dailyCalories;
+            return (0.3 * dailyCalories) / 9;
 
             break;
         case "Mass Gain":
-            return 0.2 * dailyCalories;
+            return (0.2 * dailyCalories) / 9;
 
             break;
     }
@@ -287,15 +287,15 @@ var calculateFat = function(fitnessGoal, dailyCalories) {
 var calculateCarb = function(fitnessGoal, dailyCalories) {
     switch (fitnessGoal) {
         case "Weight Loss":
-            return 0.2 * dailyCalories;
+            return (0.2 * dailyCalories) / 4;
 
             break;
         case "Maintain":
-            return 0.4 * dailyCalories;
+            return (0.4 * dailyCalories) / 4;
 
             break;
         case "Mass Gain":
-            return 0.5 * dailyCalories;
+            return (0.5 * dailyCalories) / 4;
 
             break;
     }

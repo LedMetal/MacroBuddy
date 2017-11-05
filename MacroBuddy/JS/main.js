@@ -248,44 +248,57 @@ var calculateDailyCalories = function(fitnessGoal, tdee) {
 }
 
 // Calculate Protein Allowance
-var calculateProtein = function(fitnessGoal, weight) {
+var calculateProtein = function(fitnessGoal, dailyCalories) {
     switch (fitnessGoal) {
         case "Weight Loss":
-            return 1.71 * weight;
+            return 0.45 * dailyCalories;
 
             break;
         case "Maintain":
-            return 1.35 * weight;
+            return 0.3 * dailyCalories;
 
             break;
         case "Mass Gain":
-            return 1.57 * weight;
+            return 0.3 * dailyCalories;
 
             break;
     }
 }
 
 // Calculate Fat Allowance
-var calculateFat = function(fitnessGoal, weight) {
+var calculateFat = function(fitnessGoal, dailyCalories) {
     switch (fitnessGoal) {
         case "Weight Loss":
-            return 0.59 * weight;
+            return 0.35 * dailyCalories;
 
             break;
         case "Maintain":
-            return 1.35 * weight;
+            return 0.3 * dailyCalories;
 
             break;
         case "Mass Gain":
-            return 0.46 * weight;
+            return 0.2 * dailyCalories;
 
             break;
     }
 }
 
 // Calculate Carbohydrate Allowance
-var calculateCarb = function(dailyCalories, protein, fat) {
-    return (dailyCalories - ((protein * 4) + (fat * 9))) / 4;
+var calculateCarb = function(fitnessGoal, dailyCalories) {
+    switch (fitnessGoal) {
+        case "Weight Loss":
+            return 0.2 * dailyCalories;
+
+            break;
+        case "Maintain":
+            return 0.4 * dailyCalories;
+
+            break;
+        case "Mass Gain":
+            return 0.5 * dailyCalories;
+
+            break;
+    }
 }
 
 // Function called onClick of button
@@ -309,13 +322,13 @@ var createProfile = function() {
             weight: toPounds(_weight),
             activityFactor: findActivityFactor(_activityFactor),
             fitnessGoal: _fitnessGoal,
-            bmr: calculateBMR(_gender, toPounds(_weight), toInches(_height), _age),
             tdee: calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor),
             dailyCalories: calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor)),
-            protein: calculateProtein(_fitnessGoal, toPounds(_weight)),
-            fat: calculateFat(_fitnessGoal, toPounds(_weight)),
-            carbohydrate: calculateCarb(calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor)), calculateProtein(_fitnessGoal, toPounds(_weight)), calculateFat(_fitnessGoal, toPounds(_weight)))
+            protein: calculateProtein(_fitnessGoal, calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor))),
+            fat: calculateFat(_fitnessGoal, calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor))),
+            carbohydrate: calculateCarb(_fitnessGoal, calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor)))
         }
+        userProfile.bmr = calculateBMR(userProfile.gender, userProfile.weight, userProfile.height, userProfile.age);
 
         // Stringify userProfile object
         var userProfile_JSON = JSON.stringify(userProfile);

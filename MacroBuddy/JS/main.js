@@ -321,14 +321,14 @@ var createProfile = function() {
             height: toInches(_height),
             weight: toPounds(_weight),
             activityFactor: findActivityFactor(_activityFactor),
-            fitnessGoal: _fitnessGoal,
-            tdee: calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor),
-            dailyCalories: calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor)),
-            protein: calculateProtein(_fitnessGoal, calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor))),
-            fat: calculateFat(_fitnessGoal, calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor))),
-            carbohydrate: calculateCarb(_fitnessGoal, calculateDailyCalories(_fitnessGoal, calculateBMR(_gender, toPounds(_weight), toInches(_height), _age) * findActivityFactor(_activityFactor)))
+            fitnessGoal: _fitnessGoal
         }
         userProfile.bmr = calculateBMR(userProfile.gender, userProfile.weight, userProfile.height, userProfile.age);
+        userProfile.tdee = userProfile.bmr * userProfile.activityFactor;
+        userProfile.dailyCalories = calculateDailyCalories(userProfile.fitnessGoal, userProfile.tdee);
+        userProfile.protein = calculateProtein(userProfile.fitnessGoal, userProfile.dailyCalories);
+        userProfile.fat = calculateFat(userProfile.fitnessGoal, userProfile.dailyCalories);
+        userProfile.carbohydrate = calculateCarb(userProfile.fitnessGoal, userProfile.dailyCalories);
 
         // Stringify userProfile object
         var userProfile_JSON = JSON.stringify(userProfile);

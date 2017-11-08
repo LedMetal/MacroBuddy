@@ -335,6 +335,9 @@ var createProfile = function() {
         // Set localStorage for userProfile_JSON
         localStorage.setItem("userProfile", userProfile_JSON);
 
+        // Navigate to results page
+        window.location.href = "../HTML/results.html";
+
         // DEBUG - Display userProfile in browser console
         console.log(userProfile);
     }

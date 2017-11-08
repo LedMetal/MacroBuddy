@@ -79,6 +79,7 @@
     <Content Include="HTML\main.html" />
     <Content Include="HTML\results.html" />
     <Content Include="Images\banner.png" />
+    <Content Include="Images\line-divider.png" />
     <Content Include="Images\logo.PNG" />
     <Content Include="JS\jquery-3.2.1.js" />
     <Content Include="JS\main.js" />

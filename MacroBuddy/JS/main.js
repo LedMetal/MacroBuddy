@@ -3,6 +3,9 @@ var updateHeightPlaceholder = function() {
     var radioHeight = $("[name = 'radioHeight']");
     var inputHeight = $("#inputHeight");
 
+    // Display inputHeight textbox
+    inputHeight.slideDown("fast");
+
     if (radioHeight[0].checked) {
         inputHeight[0].placeholder = "{inches}";
     } else if (radioHeight[1].checked) {
@@ -17,6 +20,9 @@ var updateHeightPlaceholder = function() {
 var updateWeightPlaceholder = function() {
     var radioWeight = $("[name = 'radioWeight']");
     var inputWeight = $("#inputWeight");
+
+    // Display inputWeight textbox
+    inputWeight.slideDown("fast");
 
     if (radioWeight[0].checked) {
         inputWeight[0].placeholder = "{pounds}";
@@ -359,6 +365,10 @@ $(function() {
         $(this).css("background-color", "lightgrey");
     }, function() {
         $(this).css("background-color", "");
-    });
+        });
+
+    // Hide inputHeight and inputWeight textboxes
+    $('#inputHeight').hide();
+    $('#inputWeight').hide();
 
 });

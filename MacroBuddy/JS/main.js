@@ -1,61 +1,61 @@
 ﻿// Updates the placeholder text inside an empty height input field
 var updateHeightPlaceholder = function() {
     var radioHeight = $("[name = 'radioHeight']");
-    var inputHeight = $("#inputHeight")[0];
+    var inputHeight = $("#inputHeight");
 
     if (radioHeight[0].checked) {
-        inputHeight.placeholder = "{inches}";
+        inputHeight[0].placeholder = "{inches}";
     } else if (radioHeight[1].checked) {
-        inputHeight.placeholder = "{centimeters}";
+        inputHeight[0].placeholder = "{centimeters}";
     }
 
     // Remove the 'readonly' tag from the height input field
-    $("#inputHeight").removeAttr("readonly");
+    inputHeight.removeAttr("readonly");
 }
 
 // Updates the placeholder text inside an empty weight input field
 var updateWeightPlaceholder = function() {
     var radioWeight = $("[name = 'radioWeight']");
-    var inputWeight = $("#inputWeight")[0];
+    var inputWeight = $("#inputWeight");
 
     if (radioWeight[0].checked) {
-        inputWeight.placeholder = "{pounds}";
+        inputWeight[0].placeholder = "{pounds}";
     } else if (radioWeight[1].checked) {
-        inputWeight.placeholder = "{kilograms}";
+        inputWeight[0].placeholder = "{kilograms}";
     }
 
     // Remove the 'readonly' tag from the weight input field
-    $("#inputWeight").removeAttr("readonly");
+    inputWeight.removeAttr("readonly");
 }
 
 // Updates the description text next to the amount of exercise select menu
 var updateAmountOfExerciseDescription = function() {
-    var selectAmountOfExercise = $("#selectAmountOfExercise")[0];
-    var amountOfExerciseDescription = $("#amountOfExerciseDescription")[0];
+    var selectAmountOfExercise = $("#selectAmountOfExercise");
+    var amountOfExerciseDescription = $("#amountOfExerciseDescription");
 
-    switch (selectAmountOfExercise.options[selectAmountOfExercise.selectedIndex].value) {
+    switch (selectAmountOfExercise[0].options[selectAmountOfExercise[0].selectedIndex].value) {
         case "Sedentary":
-            amountOfExerciseDescription.innerHTML = "<center>Little to no exercise per week</center>";
+            amountOfExerciseDescription[0].innerHTML = "<center>Little to no exercise per week</center>";
 
             break;
         case "Lightly Active":
-            amountOfExerciseDescription.innerHTML = "<center>Light exercise 1-3 days per week</center>";
+            amountOfExerciseDescription[0].innerHTML = "<center>Light exercise 1-3 days per week</center>";
 
             break;
         case "Moderately Active":
-            amountOfExerciseDescription.innerHTML = "<center>Moderate exercise 3-5 days per week</center>";
+            amountOfExerciseDescription[0].innerHTML = "<center>Moderate exercise 3-5 days per week</center>";
 
             break;
         case "Very Active":
-            amountOfExerciseDescription.innerHTML = "<center>Heavy exercise 6-7 days per week</center>";
+            amountOfExerciseDescription[0].innerHTML = "<center>Heavy exercise 6-7 days per week</center>";
 
             break;
         case "Extremely Active":
-            amountOfExerciseDescription.innerHTML = "<center>Very heavy exercise 2 times per day</center>";
+            amountOfExerciseDescription[0].innerHTML = "<center>Very heavy exercise 2 times per day</center>";
 
             break;
         default:
-            amountOfExerciseDescription.innerHTML = "";
+            amountOfExerciseDescription[0].innerHTML = "";
 
             break;
     }

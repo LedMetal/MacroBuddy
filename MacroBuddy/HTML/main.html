@@ -47,12 +47,35 @@
 
             <h3>Let's Start With Your Information</h3>
 
-            <input type="text" ng-model="name" />
+            <table>
+                <tr id="trName" style="display: table-row; text-align: center;">
+                    <td colspan=2>
+                        My Name Is {{ name }}
+                    </td>
+                </tr>
 
-            <p>My name is {{ name }}</p>
+                <tr id="trBlank"></tr>
+
+                <tr id="trInput">
+                    <td>
+                        <input type="text" id="tbName" ng-model="name" />
+                    </td>
+                    <td>
+                        <input type="button" id="btnEnter" value="ENTER" />
+                    </td>
+                </tr>
+
+                <tr id="trBlank"></tr>
+            </table>
 
         </center>
     </div>
+
+    <script>
+        //var result_style = $('#result_tr')[0].style;
+        //result_style.display = 'table-row';
+    </script>
+
 </body>
 
 </html>

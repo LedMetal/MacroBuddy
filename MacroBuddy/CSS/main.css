@@ -14,13 +14,8 @@ body {
     text-align: center;
 }
 
-td {
-    padding: 4px;
-}
-
-td.title {
-    text-align: right;
-    font-weight: bold;
+hr {
+    border-color: black
 }
 
 input[type=button] {

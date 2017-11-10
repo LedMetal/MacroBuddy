@@ -1,4 +1,10 @@
-﻿// Updates the placeholder text inside an empty height input field
+﻿// Create AngularJS module and controller
+var myApp = angular.module('myApp', [])
+    .controller('mainController', ['$scope', function($scope) {
+
+    }]);
+
+// Updates the placeholder text inside an empty height input field
 var updateHeightPlaceholder = function() {
     var radioHeight = $("[name = 'radioHeight']");
     var inputHeight = $("#inputHeight");

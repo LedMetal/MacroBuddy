@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="myApp" ng-controller="mainController">
 
 <head>
     <meta charset="utf-8" />
@@ -47,6 +47,9 @@
 
             <p>Let's start with some basic information!</p>
 
+            <input type="text" ng-model="name" />
+
+            <p>My name is {{ name }}</p>
 
         </center>
     </div>

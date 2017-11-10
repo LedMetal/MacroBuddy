@@ -13,6 +13,7 @@
             crossorigin="anonymous"></script>
     <!-- If CDN fails to load, load the local version -->
     <script>window.jQuery || document.write('<script src="../js/jquery-3.2.1.js"><\/script>')</script>
+    <script src="https://code.angularjs.org/1.6.6/angular.min.js"></script>
 
     <script src="../JS/main.js"></script>
 </head>
@@ -46,94 +47,6 @@
 
             <p>Let's start with some basic information!</p>
 
-            <table id="infoTable">
-                <tr>
-                    <td class="title">Name:</td>
-                    <td>
-                        <input id="inputName" type="text" size=15 placeholder="John Smith" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="title">Gender:</td>
-                    <td>
-                        <select id="selectGender">
-                            <option value=""></option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="title">Age:</td>
-                    <td>
-                        <input id="inputAge" type="text" size=6 placeholder="{in years}" />
-                    </td>
-                </tr>
-                <tr>
-                    <td class="title">Height:</td>
-                    <td>
-                        <input id="inputHeight" type="text" size=10 placeholder="Select unit -->" readonly="readonly" />
-                    </td>
-                    <td>
-                        <center>
-                            <label>
-                                <input name="radioHeight" type="radio" onclick="updateHeightPlaceholder()" />Inches (in)
-                            </label>
-                            <label>
-                                <input name="radioHeight" type="radio" onclick="updateHeightPlaceholder()" />Centimeters (cm)
-                            </label>
-                        </center>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="title">Weight:</td>
-                    <td>
-                        <input id="inputWeight" type="text" size=10 placeholder="Select unit -->" readonly="readonly" />
-                    </td>
-                    <td>
-                        <center>
-                            <label>
-                                <input name="radioWeight" type="radio" onclick="updateWeightPlaceholder()" />Pounds (lb)
-                            </label>
-                            <label>
-                                <input name="radioWeight" type="radio" onclick="updateWeightPlaceholder()" />Kilograms (kg)
-                            </label>
-                        </center>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="title">Amount of Exercise:</td>
-                    <td>
-                        <select id="selectAmountOfExercise" onchange="if(this.selectedIndex) updateAmountOfExerciseDescription();">
-                            <option value=""></option>
-                            <option value="Sedentary">Sedentary</option>
-                            <option value="Lightly Active">Lightly Active</option>
-                            <option value="Moderately Active">Moderately Active</option>
-                            <option value="Very Active">Very Active</option>
-                            <option value="Extremely Active">Extremely Active</option>
-                        </select>
-                    </td>
-                    <td id="amountOfExerciseDescription"></td>
-                </tr>
-                <tr>
-                    <td class="title">Fitness Goal:</td>
-                    <td>
-                        <select id="selectFitnessGoal">
-                            <option value=""></option>
-                            <option value="Weight Loss">Weight Loss</option>
-                            <option value="Maintain">Maintain</option>
-                            <option value="Mass Gain">Mass Gain</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan=3 style="padding: 10px">
-                        <center>
-                            <input id="goButton" type="button" value="Go, MacroBuddy!" onclick="createProfile()" />
-                        </center>
-                    </td>
-                </tr>
-            </table>
 
         </center>
     </div>

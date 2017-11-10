@@ -373,8 +373,4 @@ $(function() {
         $(this).css("background-color", "");
         });
 
-    // Hide inputHeight and inputWeight textboxes
-    $('#inputHeight').hide();
-    $('#inputWeight').hide();
-
 });

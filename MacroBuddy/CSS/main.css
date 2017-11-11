@@ -14,18 +14,14 @@ body {
     text-align: center;
 }
 
-td {
-    padding: 4px;
-}
-
-td.title {
-    text-align: right;
-    font-weight: bold;
-}
-
 input[type=button] {
     height: 3em;
     width: 10em;
     font-size: large;
     color: rgb(29, 139, 107);
+}
+
+input[type=text] {
+    font-size: 14pt;
+    height: 200px;
 }

@@ -1,55 +1,59 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="myApp" ng-controller="mainController">
 
-<head>
-    <meta charset="utf-8" />
-    <title>MacroBuddy - One-Stop Fitness</title>
+    <head>
+        <meta charset="utf-8" />
+        <title>MacroBuddy - One-Stop Fitness</title>
 
-    <link rel="stylesheet" href="../CSS/main.css">
+        <link rel="stylesheet" href="../CSS/main.css">
 
-    <!-- Load jQuery CDN first -->
-    <script src="http://code.jquery.com/jquery-3.2.1.js"
-            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-            crossorigin="anonymous"></script>
-    <!-- If CDN fails to load, load the local version -->
-    <script>window.jQuery || document.write('<script src="../js/jquery-3.2.1.js"><\/script>')</script>
-    <script src="https://code.angularjs.org/1.6.6/angular.min.js"></script>
+        <!-- Load jQuery CDN first -->
+        <script src="http://code.jquery.com/jquery-3.2.1.js"
+                integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+                crossorigin="anonymous"></script>
+        <!-- If CDN fails to load, load the local version -->
+        <script>window.jQuery || document.write('<script src="../js/jquery-3.2.1.js"><\/script>')</script>
+        <script src="https://code.angularjs.org/1.6.6/angular.min.js"></script>
 
-    <script src="../JS/main.js"></script>
-</head>
+        <script src="../JS/moduleController.js"></script>
+        <script src="../JS/main.js"></script>
+    </head>
 
-<body>
-    <div id="headerBar" style="background-color: rgb(50,50,50)">
-        <center>
-            <img src="../Images/banner.png" id="banner" />
-        </center>
-    </div>
+    <body>
+        <div id="headerBar" style="background-color: rgb(50,50,50)">
+            <center>
+                <img src="../Images/banner.png" id="banner" />
+            </center>
+        </div>
 
-    <div id="allText" style="border: 3px solid rgb(50,50,50)">
-        <center>
-            <div id="introBlock">
-                <h3>Welcome to MacroBuddy, your own personal nutritionist!</h3>
+        <div id="allText" style="border: 3px solid rgb(50,50,50)">
+            <center>
+                <div id="introBlock">
+                    <h3>Welcome to MacroBuddy, your own personal nutritionist!</h3>
 
-                <p>
-                    Have you ever tried coming up with a diet plan that works for you? How many of them showed you results, or how many did you
-                    stick with long enough to see them? Do you know what three nutrient bases make up your macronutrients, and how
-                    much of each you should be eating?
-                </p>
-                <p>
-                    Well, MacroBuddy is here to alleviate you from all the calculations and formulae you'll need to go through to figure out
-                    your macronutrients. MacroBuddy is your one-stop location to get all your personalized macronutrition information
-                    to get you prepared and on your way to meal prepping like the pros! All it takes is some basic information and
-                    MacroBuddy will send you on your way!
-                </p>
-            </div>
+                    <p>
+                        Have you ever tried coming up with a diet plan that works for you? How many of them showed you results, or how many did you
+                        stick with long enough to see them? Do you know what three nutrient bases make up your macronutrients, and how
+                        much of each you should be eating?
+                    </p>
+                    <p>
+                        Well, MacroBuddy is here to alleviate you from all the calculations and formulae you'll need to go through to figure out
+                        your macronutrients. MacroBuddy is your one-stop location to get all your personalized macronutrition information
+                        to get you prepared and on your way to meal prepping like the pros! All it takes is some basic information and
+                        MacroBuddy will send you on your way!
+                    </p>
+                </div>
 
-            <img src="../Images/line-divider.png" style="width: 20%;" />
+                <img src="../Images/line-divider.png" style="width: 20%;" />
 
-            <p>Let's start with some basic information!</p>
+                <p>My name is {{ inputName }}</p>
 
+                <input type="text" ng-model="inputName" />
 
-        </center>
-    </div>
-</body>
+                <br /><br />
+
+            </center>
+        </div>
+    </body>
 
 </html>

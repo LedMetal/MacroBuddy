@@ -14,14 +14,21 @@ body {
     text-align: center;
 }
 
-input[type=button] {
-    height: 3em;
-    width: 10em;
-    font-size: large;
-    color: rgb(29, 139, 107);
+hr {
+    border-color: black
 }
 
 input[type=text] {
-    font-size: 14pt;
-    height: 200px;
+    font-size: larger;
+    text-align: center;
+}
+
+input[type=button] {
+    height: 30px;
+    font-size: medium;
+    color: rgb(29, 139, 107);
+}
+
+#trBlank {
+    height: 25px;
 }

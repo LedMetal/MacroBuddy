@@ -53,15 +53,20 @@
                         My Name Is {{ name }}
                     </td>
                 </tr>
+                <tr id="trGender" style="display: none; text-align: center;">
+                    <td colspan=2>
+                        My Gender Is {{ gender }}
+                    </td>
+                </tr>
 
                 <tr id="trBlank"></tr>
 
                 <tr id="trInput">
                     <td>
-                        <input type="text" id="tbName" ng-model="name" />
+                        <input type="text" id="tbInput" ng-model="name" />
                     </td>
                     <td>
-                        <input type="button" id="btnEnter" value="ENTER" />
+                        <input type="button" id="btnEnter" value="ENTER" onclick="$scope.nextQuestion()" />
                     </td>
                 </tr>
 

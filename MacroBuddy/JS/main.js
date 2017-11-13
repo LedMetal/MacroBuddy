@@ -445,10 +445,10 @@ $(function() {
     });
 
     // Create hover event on button, changing background-color
-    $('#goButton').hover(function() {
+    $('#btnEnter').hover(function() {
         $(this).css("background-color", "lightgrey");
     }, function() {
         $(this).css("background-color", "");
-        });
+    });
 
 });

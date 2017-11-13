@@ -14,7 +14,7 @@
     <!-- If CDN fails to load, load the local version -->
     <script>window.jQuery || document.write('<script src="../js/jquery-3.2.1.js"><\/script>')</script>
     <script src="https://code.angularjs.org/1.6.6/angular.min.js"></script>
-
+    <script src="../JS/angularModule.js"></script>
     <script src="../JS/main.js"></script>
 </head>
 
@@ -47,6 +47,7 @@
 
             <h3>Let's Start With Your Information</h3>
 
+            <!-- Display Table -->
             <table>
                 <tr id="trName" style="display: table-row; text-align: center;">
                     <td colspan=2>
@@ -60,6 +61,7 @@
                 </tr>
             </table>
 
+            <!-- Input Table -->
             <table>
                 <tr id="trInput">
                     <td>
@@ -69,15 +71,19 @@
                         <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
                     </td>
                 </tr>
+
+                <tr id="trInput">
+                    <td>
+                        <input type="text" id="tbInput" ng-model="gender" />
+                    </td>
+                    <td>
+                        <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
+                    </td>
+                </tr>
             </table>
 
         </center>
     </div>
-
-    <script>
-        //var result_style = $('#result_tr')[0].style;
-        //result_style.display = 'table-row';
-    </script>
 
 </body>
 

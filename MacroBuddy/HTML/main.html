@@ -45,46 +45,8 @@
             <hr />
 
             <h3>Let's Start With Your Information</h3>
-
-            <!-- Display Table -->
-            <table>
-                <tr id="trName" style="display: table-row;">
-                    <td colspan=2>
-                        My Name Is {{ name }}
-                    </td>
-                </tr>
-                <tr id="trGender" style="display: none;">
-                    <td colspan=2>
-                        I Am A {{ gender }}
-                    </td>
-                </tr>
-                <tr id="trAge" style="display: none;">
-                    <td colspan=2>
-                        I Am {{ age }} Years Old
-                    </td>
-                </tr>
-                <tr id="trHeight" style="display: none;">
-                    <td colspan=2>
-                        I Am {{ height }} Inches Tall
-                    </td>
-                </tr>
-                <tr id="trWeight" style="display: none;">
-                    <td colspan=2>
-                        I Weigh {{ weight }} Pounds
-                    </td>
-                </tr>
-                <tr id="trActivityFactor" style="display: none;">
-                    <td colspan=2>
-                        My Activity Factor Is {{ activityFactor }}
-                    </td>
-                </tr>
-                <tr id="trFitnessGoal" style="display: none;">
-                    <td colspan=2>
-                        My Fitness Goal Is To {{ fitnessGoal }}
-                    </td>
-                </tr>
-            </table>
-
+            <p>Give MacroBuddy some basic information to get started!</p>
+            
             <!-- Input Table -->
             <table>
                 <tr id="trInputName">
@@ -99,7 +61,7 @@
                 <tr id="trInputGender" style="display: none">
                     <td>
                         <label><input type="radio" ng-model="gender" value="Male" /> Male</label>
-                        <label><input type="radio" ng-model="gender" value="Female" /> Female</label> 
+                        <label><input type="radio" ng-model="gender" value="Female" /> Female</label>
                     </td>
                     <td>
                         <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
@@ -135,6 +97,7 @@
 
                 <tr id="trInputAF" style="display: none">
                     <td colspan=2>
+                        <!-- Activity Factor Table -->
                         <table class="table-bordered">
                             <thead>
                                 <tr>
@@ -181,6 +144,47 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </td>
+                </tr>
+            </table>
+
+            <hr />
+
+            <!-- Display Table -->
+            <table style="font-size: larger">
+                <tr id="trName" style="display: table-row;">
+                    <td colspan=2>
+                        My Name Is {{ name }}
+                    </td>
+                </tr>
+                <tr id="trGender" style="display: none;">
+                    <td colspan=2>
+                        I Am A {{ gender }}
+                    </td>
+                </tr>
+                <tr id="trAge" style="display: none;">
+                    <td colspan=2>
+                        I Am {{ age }} Years Old
+                    </td>
+                </tr>
+                <tr id="trHeight" style="display: none;">
+                    <td colspan=2>
+                        I Am {{ height }} Inches Tall
+                    </td>
+                </tr>
+                <tr id="trWeight" style="display: none;">
+                    <td colspan=2>
+                        I Weigh {{ weight }} Pounds
+                    </td>
+                </tr>
+                <tr id="trActivityFactor" style="display: none;">
+                    <td colspan=2>
+                        My Activity Factor Is {{ activityFactor }}
+                    </td>
+                </tr>
+                <tr id="trFitnessGoal" style="display: none;">
+                    <td colspan=2>
+                        My Fitness Goal Is To {{ fitnessGoal }}
                     </td>
                 </tr>
             </table>

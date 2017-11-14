@@ -366,5 +366,4 @@ $(function() {
     }, function() {
         $(this).css("background-color", "");
     });
-
 });

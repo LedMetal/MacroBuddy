@@ -3,7 +3,7 @@ var myApp = angular.module('myApp', [])
     .controller('mainController', ['$scope', function($scope) {
         $scope.question = 1;
 
-        // Go to the next question (onClick function on button)
+        // Go to the next question (ng-Click function on button)
         $scope.nextQuestion = function() {
             $scope.question++;
 

@@ -1,73 +1,4 @@
-﻿// Updates the placeholder text inside an empty height input field
-var updateHeightPlaceholder = function() {
-    var radioHeight = $("[name = 'radioHeight']");
-    var inputHeight = $("#inputHeight");
-
-    // Display inputHeight textbox
-    inputHeight.slideDown("fast");
-
-    if (radioHeight[0].checked) {
-        inputHeight[0].placeholder = "{inches}";
-    } else if (radioHeight[1].checked) {
-        inputHeight[0].placeholder = "{centimeters}";
-    }
-
-    // Remove the 'readonly' tag from the height input field
-    inputHeight.removeAttr("readonly");
-}
-
-// Updates the placeholder text inside an empty weight input field
-var updateWeightPlaceholder = function() {
-    var radioWeight = $("[name = 'radioWeight']");
-    var inputWeight = $("#inputWeight");
-
-    // Display inputWeight textbox
-    inputWeight.slideDown("fast");
-
-    if (radioWeight[0].checked) {
-        inputWeight[0].placeholder = "{pounds}";
-    } else if (radioWeight[1].checked) {
-        inputWeight[0].placeholder = "{kilograms}";
-    }
-
-    // Remove the 'readonly' tag from the weight input field
-    inputWeight.removeAttr("readonly");
-}
-
-// Updates the description text next to the amount of exercise select menu
-var updateAmountOfExerciseDescription = function() {
-    var selectAmountOfExercise = $("#selectAmountOfExercise");
-    var amountOfExerciseDescription = $("#amountOfExerciseDescription");
-
-    switch (selectAmountOfExercise[0].options[selectAmountOfExercise[0].selectedIndex].value) {
-        case "Sedentary":
-            amountOfExerciseDescription[0].innerHTML = "<center>Little to no exercise per week</center>";
-
-            break;
-        case "Lightly Active":
-            amountOfExerciseDescription[0].innerHTML = "<center>Light exercise 1-3 days per week</center>";
-
-            break;
-        case "Moderately Active":
-            amountOfExerciseDescription[0].innerHTML = "<center>Moderate exercise 3-5 days per week</center>";
-
-            break;
-        case "Very Active":
-            amountOfExerciseDescription[0].innerHTML = "<center>Heavy exercise 6-7 days per week</center>";
-
-            break;
-        case "Extremely Active":
-            amountOfExerciseDescription[0].innerHTML = "<center>Very heavy exercise 2 times per day</center>";
-
-            break;
-        default:
-            amountOfExerciseDescription[0].innerHTML = "";
-
-            break;
-    }
-}
-
-// Verify a legal input for Name
+﻿// Verify a legal input for Name
 var nameVerification = function(name) {
     if (/^[a-zA-Z]+[-]?[a-zA-Z]+[ ]?[a-zA-Z]+[-]?[a-zA-Z]+$/.test(name)) {
         return true;
@@ -307,7 +238,7 @@ var calculateCarb = function(fitnessGoal, dailyCalories) {
     }
 }
 
-// Function called onClick of button
+// Function called ng-Click of button
 var createProfile = function() {
     var _name = $('#inputName')[0].value;
     var _gender = $('#selectGender')[0].value;

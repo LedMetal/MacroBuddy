@@ -3,32 +3,35 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: larger;
+    font-size: large;
     color: white;
     background-color: rgb(29, 139, 107);
 }
 
+#headerBar {
+    background-color: rgb(50,50,50);
+}
+
+#allText {
+    border: 3px solid rgb(50,50,50);
+}
+
 #introBlock {
     width: 80%;
-    text-align: center;
 }
 
 hr {
     border-color: black
 }
 
+tr {
+    text-align: center;
+}
+
 input[type=text] {
-    font-size: larger;
     text-align: center;
 }
 
 input[type=button] {
-    height: 30px;
-    font-size: medium;
     color: rgb(29, 139, 107);
-}
-
-#trBlank {
-    height: 25px;
 }

@@ -81,7 +81,6 @@
     <Content Include="Images\banner.png" />
     <Content Include="Images\logo.PNG" />
     <Content Include="JS\angularModule.js" />
-    <Content Include="JS\jquery-3.2.1.js" />
     <Content Include="JS\main.js" />
     <Content Include="JS\results.js" />
     <Content Include="Web.config" />

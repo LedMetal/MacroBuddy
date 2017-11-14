@@ -98,7 +98,7 @@
                 <tr id="trInputAF" style="display: none">
                     <td colspan=2>
                         <!-- Activity Factor Table -->
-                        <table class="table table-bordered table-hover table-striped">
+                        <table class="table table-bordered table-hover table-striped table-condensed">
                             <thead>
                                 <tr>
                                     <th>Select</th>
@@ -151,42 +151,51 @@
             <hr />
 
             <!-- Display Table -->
-            <table style="font-size: larger">
-                <tr id="trName" style="display: table-row;">
-                    <td colspan=2>
-                        My Name Is {{ name }}
-                    </td>
-                </tr>
-                <tr id="trGender" style="display: none;">
-                    <td colspan=2>
-                        I Am A {{ gender }}
-                    </td>
-                </tr>
-                <tr id="trAge" style="display: none;">
-                    <td colspan=2>
-                        I Am {{ age }} Years Old
-                    </td>
-                </tr>
-                <tr id="trHeight" style="display: none;">
-                    <td colspan=2>
-                        I Am {{ height }} Inches Tall
-                    </td>
-                </tr>
-                <tr id="trWeight" style="display: none;">
-                    <td colspan=2>
-                        I Weigh {{ weight }} Pounds
-                    </td>
-                </tr>
-                <tr id="trActivityFactor" style="display: none;">
-                    <td colspan=2>
-                        My Activity Factor Is {{ activityFactor }}
-                    </td>
-                </tr>
-                <tr id="trFitnessGoal" style="display: none;">
-                    <td colspan=2>
-                        My Fitness Goal Is To {{ fitnessGoal }}
-                    </td>
-                </tr>
+            <table style="font-size: larger" class="table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Personal Information
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="trName" style="display: table-row;">
+                        <td>
+                            My Name Is {{ name }}
+                        </td>
+                    </tr>
+                    <tr id="trGender" style="display: none;">
+                        <td>
+                            I Am A {{ gender }}
+                        </td>
+                    </tr>
+                    <tr id="trAge" style="display: none;">
+                        <td>
+                            I Am {{ age }} Years Old
+                        </td>
+                    </tr>
+                    <tr id="trHeight" style="display: none;">
+                        <td>
+                            I Am {{ height }} Inches Tall
+                        </td>
+                    </tr>
+                    <tr id="trWeight" style="display: none;">
+                        <td>
+                            I Weigh {{ weight }} Pounds
+                        </td>
+                    </tr>
+                    <tr id="trActivityFactor" style="display: none;">
+                        <td>
+                            My Activity Factor Is {{ activityFactor }}
+                        </td>
+                    </tr>
+                    <tr id="trFitnessGoal" style="display: none;">
+                        <td>
+                            My Fitness Goal Is To {{ fitnessGoal }}
+                        </td>
+                    </tr>
+                </tbody>                
             </table>
 
         </center>

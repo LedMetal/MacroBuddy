@@ -55,27 +55,26 @@ var myApp = angular.module('myApp', [])
 
                     break;
                 case 3:     // Age
-                    $('#tbInput').attr('ng-model', 'age');
+                    $('#trAge')[0].style.display = '';
 
                     break;
                 case 4:     // Height
-                    $('#tbInput').attr('ng-model', 'height');
+                    $('#trHeight')[0].style.display = '';
 
                     break;
                 case 5:     // Weight
-                    $('#tbInput').attr('ng-model', 'weight');
+                    $('#trWeight')[0].style.display = '';
 
                     break;
                 case 6:     // Activity Factor
-                    $('#tbInput').attr('ng-model', 'activityFactor');
+                    $('#trActivityFactor')[0].style.display = '';
 
                     break;
                 case 7:     // Fitness Goal
-                    $('#tbInput').attr('ng-model', 'fitnessGoal');
+                    $('#trFitnessGoal')[0].style.display = '';
 
                     break;
                 case 8:     // Questions Finished
-                    $('#tbInput').attr('ng-model', '');
 
                     break;
             }

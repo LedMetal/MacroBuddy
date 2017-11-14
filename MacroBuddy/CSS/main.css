@@ -36,3 +36,7 @@ input[type=text] {
 input[type=button] {
     color: rgb(29, 139, 107);
 }
+
+input[name=radioAF] {
+    width: 100%;
+}

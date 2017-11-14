@@ -298,3 +298,9 @@ $(function() {
         $(this).css("background-color", "");
     });
 });
+
+$(document).keypress(function(key) {
+    if (key.which == 13) {
+        $('#btnEnter').click();
+    }
+});

@@ -53,31 +53,31 @@
                 <table>
                     <tr id="trInputName">
                         <td>
-                            <input type="text" id="tbName" ng-model="userProfile.name" />
+                            <input type="text" id="tbName" ng-model="tempName" />
                         </td>
                         <td>
-                            <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
+                            <input type="button" id="btnEnter" value="ENTER" ng-click="nameVerification(tempName)" />
                         </td>
                     </tr>
 
                     <tr id="trInputGender" style="display: none">
                         <td>
-                            <select class="form-control" id="cbGender" ng-model="userProfile.gender">
+                            <select class="form-control" id="cbGender" ng-model="tempGender">
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>                                
                             </select>
                         </td>
                         <td>
-                            <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
+                            <input type="button" id="btnEnter" value="ENTER" ng-click="genderVerification(tempGender)" />
                         </td>
                     </tr>
 
                     <tr id="trInputAge" style="display: none">
                         <td>
-                            <input type="date" id="tbDate" ng-model="userProfile.age" class="form-control" />
+                            <input type="date" id="tbDate" ng-model="birthday" class="form-control" />
                         </td>
                         <td>
-                            <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
+                            <input type="button" id="btnEnter" value="ENTER" ng-click="calculateAge(birthday)" />
                         </td>
                     </tr>
 
@@ -142,17 +142,17 @@
                     <tbody>
                         <tr id="trName" style="display: table-row;">
                             <td>
-                                My Name Is {{ userProfile.name }}
+                                My Name Is {{ tempName }}
                             </td>
                         </tr>
                         <tr id="trGender" style="display: none;">
                             <td>
-                                I Am A {{ userProfile.gender }}
+                                I Am A {{ tempGender }}
                             </td>
                         </tr>
                         <tr id="trAge" style="display: none;">
                             <td>
-                                I Was Born On {{ userProfile.age | date: 'MM-dd-yyyy' }}
+                                I Am {{ userProfile.age }} Years Old
                             </td>
                         </tr>
                         <tr id="trHeight" style="display: none;">

@@ -1,28 +1,4 @@
-﻿// Verify a legal input for Name
-var nameVerification = function(name) {
-    if (/^[a-zA-Z]+[-]?[a-zA-Z]+[ ]?[a-zA-Z]+[-]?[a-zA-Z]+$/.test(name)) {
-        return true;
-    } else {
-        alert("Please enter a valid name (eg. Abdul-Rahman Sadiq)");
-
-        $("#inputName")[0].focus();
-        return false;
-    }
-}
-
-// Verify a legal input for Gender
-var genderVerification = function(gender) {
-    if (gender != "") {
-        return true;
-    } else {
-        alert("Please select a gender from the pull down menu");
-
-        $("#selectGender")[0].focus();
-        return false;
-    }
-}
-
-// Verify a legal input for Age
+﻿// Verify a legal input for Age
 var ageVerification = function(age) {
     if (/^[0-9]+$/.test(age)) {
         return true;

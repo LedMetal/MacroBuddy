@@ -76,4 +76,41 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
             activityFactory: "",
             fitnessGoal: ""
         };
+
+        // Name Verification
+        $scope.nameVerification = function(name) {
+            if (/^[a-zA-Z]+[-]?[a-zA-Z]+[ ]?[a-zA-Z]+[-]?[a-zA-Z]+$/.test(name)) {
+                $scope.userProfile.name = name;
+                $scope.nextQuestion();
+            } else {
+                alert("Please enter a valid name (eg. Abdul-Rahman Sadiq)");
+                $('#tbName').focus();
+            }
+        };
+
+        // Gender Verification
+        $scope.genderVerification = function(gender) {
+            if (gender != null) {
+                $scope.userProfile.gender = gender;
+                $scope.nextQuestion();
+            } else {
+                alert("Please select a gender from the pull down menu");
+                $('#cbGender').focus();
+            }
+        };
+
+        // Age Verification
+        $scope.calculateAge = function(birthday) {
+            if (birthday != null) {
+                var today = new Date();
+                var difference = Math.floor((today - birthday) / (1000 * 3600 * 24 * 365));
+
+                $scope.userProfile.age = difference;
+                $scope.nextQuestion();
+            } else {
+                alert("Please enter your birthday in the given field");
+                $('#tbDate').focus();
+            }
+        };
+
     }]);

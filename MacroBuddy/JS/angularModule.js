@@ -62,6 +62,9 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                 case 8:     // Questions Finished
                     $('#divInputTable').slideUp();
 
+                    $('#divProgBar').slideUp();
+                    $('#divGo')[0].style.display = '';
+
                     break;
             }
         };
@@ -156,7 +159,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
         };
 
         // Fitness Goal Verification
-        var fitnessGoalVerification = function(fitnessGoal) {
+        $scope.fitnessGoalVerification = function(fitnessGoal) {
             if (fitnessGoal != null) {
                 $scope.userProfile.fitnessGoal = fitnessGoal;
                 $scope.nextQuestion();

@@ -210,8 +210,11 @@
             </div>
 
             <div class="container" style="width: 33%; padding-bottom: 10px;">
-                <div class="progress">
+                <div class="progress" id="divProgBar">
                     <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="{{ progBar_current }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ progBar_current }}%">{{ rounded }}%</div>
+                </div>
+                <div class="well" style="display: none;" id="divGo">
+                    <input type="button" id="btnGoMB" class="btn btn-primary" style="color: white;" value="Go MacroBuddy!" />
                 </div>
             </div>
 

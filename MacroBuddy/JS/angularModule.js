@@ -33,7 +33,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                     $('#trInputAge')[0].style.display = 'none';
                     $('#trInputHeight')[0].style.display = '';
 
-                    $('#tbHeight').focus();
+                    $('#tbFeet').focus();
                     break;
                 case 5:     // Weight
                     $('#trWeight')[0].style.display = '';
@@ -79,11 +79,16 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
 
         // Name Verification
         $scope.nameVerification = function(name) {
-            if (/^[a-zA-Z]+[-]?[a-zA-Z]+[ ]?[a-zA-Z]+[-]?[a-zA-Z]+$/.test(name)) {
-                $scope.userProfile.name = name;
-                $scope.nextQuestion();
+            if (name != null) {
+                if (/^[a-zA-Z]+[-]?[a-zA-Z]+[ ]?[a-zA-Z]+[-]?[a-zA-Z]+$/.test(name)) {
+                    $scope.userProfile.name = name;
+                    $scope.nextQuestion();
+                } else {
+                    alert("Please enter a valid name (eg. Abdul-Rahman Sadiq)");
+                    $('#tbName').focus();
+                }
             } else {
-                alert("Please enter a valid name (eg. Abdul-Rahman Sadiq)");
+                alert("Please enter a name in the given field");
                 $('#tbName').focus();
             }
         };
@@ -110,6 +115,16 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
             } else {
                 alert("Please enter your birthday in the given field");
                 $('#tbDate').focus();
+            }
+        };
+
+        // Height Verification
+        $scope.heightVerification = function(feet, inches) {
+            if ((feet == null) || (inches == null)) {
+                alert("Please fill in both fields for your height in feet and inches");
+            } else {
+                $scope.userProfile.height = (feet * 12) + inches;
+                $scope.nextQuestion();
             }
         };
 

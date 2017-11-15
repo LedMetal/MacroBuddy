@@ -83,7 +83,36 @@
 
                     <tr id="trInputHeight" style="display: none">
                         <td>
-                            <input type="text" id="tbHeight" ng-model="userProfile.height" />
+                            <label for="cbFeet">
+                                Feet:
+                                <select class="form-control col-xs-1" id="cbFeet" ng-model="tempFeet">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </label>
+
+                            <label for="cbInches">
+                                Inches:
+                                <select class="form-control col-xs-1" id="cbInches" ng-model="tempInches">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                </select>
+                            </label>
                         </td>
                         <td>
                             <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
@@ -157,7 +186,7 @@
                         </tr>
                         <tr id="trHeight" style="display: none;">
                             <td>
-                                I Am {{ userProfile.height }} Inches Tall
+                                I Am {{ tempFeet }} Feet {{ tempInches }} Inches Tall
                             </td>
                         </tr>
                         <tr id="trWeight" style="display: none;">

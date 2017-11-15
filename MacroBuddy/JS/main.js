@@ -1,16 +1,4 @@
-﻿// Verify a legal input for Age
-var ageVerification = function(age) {
-    if (/^[0-9]+$/.test(age)) {
-        return true;
-    } else {
-        alert("Please enter a valid age (digits only; 0 - 9)");
-
-        $("#inputAge")[0].focus();
-        return false;
-    }
-}
-
-// Verify a legal input for Height
+﻿// Verify a legal input for Height
 var heightVerification = function(height) {
     if (/^[0-9]+[\.]?[0-9]+$/.test(height)) {
         var radioHeight = $("[name = 'radioHeight']");

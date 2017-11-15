@@ -50,6 +50,9 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                 case 7:     // Fitness Goal
                     $('#trFitnessGoal')[0].style.display = '';
 
+                    $('#trInputAF')[0].style.display = 'none';
+                    $('#trInputFG')[0].style.display = '';
+
                     break;
                 case 8:     // Questions Finished
                     $('#divInputTable').slideUp();
@@ -62,7 +65,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
         $scope.userProfile = {
             name: "",
             gender: "",
-            age: new Date('2012-08-03'),
+            age: "",
             height: "",
             weight: "",
             activityFactory: "",

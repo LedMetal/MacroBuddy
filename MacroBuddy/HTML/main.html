@@ -74,7 +74,7 @@
 
                     <tr id="trInputAge" style="display: none">
                         <td>
-                            <ng-combo-date-picker ng-model="userProfile.age" ng-order="mdy" ng-months="{{ months }}" ng-attrs-date="{'class': 'form-control'}" ng-attrs-month="{'class': 'form-control'}" ng-attrs-year="{'class': 'form-control'}" ng-year-order="desc" ng-placeholder="Year, Month, Day"></ng-combo-date-picker>
+                            <input type="date" ng-model="userProfile.age" class="form-control" />
                         </td>
                         <td>
                             <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
@@ -113,6 +113,19 @@
                             <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
                         </td>
                     </tr>
+
+                    <tr id="trInputFG" style="display: none">
+                        <td>
+                            <select class="form-control" id="cbFitnessGoal" ng-model="userProfile.fitnessGoal">
+                                <option value="Lose Weight">Lose Weight</option>
+                                <option value="Maintain">Maintain</option>
+                                <option value="Mass Gain">Mass Gain</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
+                        </td>
+                    </tr>
                 </table>
             </div>
 
@@ -139,7 +152,7 @@
                         </tr>
                         <tr id="trAge" style="display: none;">
                             <td>
-                                I Was Born on {{ userProfile.age }}
+                                I Was Born On {{ userProfile.age | date: 'MM-dd-yyyy' }}
                             </td>
                         </tr>
                         <tr id="trHeight" style="display: none;">
@@ -166,7 +179,7 @@
                 </table>
             </div>
 
-            <div class="container" style="width: 33%;">
+            <div class="container" style="width: 33%; padding-bottom: 10px;">
                 <div class="progress">
                     <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="{{ progBar_current }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ progBar_current }}%">{{ rounded }}%</div>
                 </div>

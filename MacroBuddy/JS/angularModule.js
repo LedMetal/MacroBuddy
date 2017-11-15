@@ -53,5 +53,15 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                     break;
             }
         };
-        
+
+        // User Profile
+        $scope.userProfile = {
+            name: "",
+            gender: "",
+            age: new Date('2012-08-03'),
+            height: "",
+            weight: "",
+            activityFactory: "",
+            fitnessGoal: ""
+        };
     }]);

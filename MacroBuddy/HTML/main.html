@@ -53,7 +53,7 @@
                 <table>
                     <tr id="trInputName">
                         <td>
-                            <input type="text" id="tbInput" ng-model="name" />
+                            <input type="text" id="tbInput" ng-model="userProfile.name" />
                         </td>
                         <td>
                             <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
@@ -62,7 +62,7 @@
 
                     <tr id="trInputGender" style="display: none">
                         <td>
-                            <select class="form-control" id="cbGender" ng-model="gender">
+                            <select class="form-control" id="cbGender" ng-model="userProfile.gender">
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>                                
                             </select>
@@ -74,7 +74,7 @@
 
                     <tr id="trInputAge" style="display: none">
                         <td>
-                            <ng-combo-date-picker ng-model="birthday" ng-order="mdy" ng-months="{{ months }}" ng-attrs-date="{'class': 'form-control'}" ng-attrs-month="{'class': 'form-control'}" ng-attrs-year="{'class': 'form-control'}" ng-year-order="desc" ng-placeholder="Year, Month, Day"></ng-combo-date-picker>
+                            <ng-combo-date-picker ng-model="userProfile.age" ng-order="mdy" ng-months="{{ months }}" ng-attrs-date="{'class': 'form-control'}" ng-attrs-month="{'class': 'form-control'}" ng-attrs-year="{'class': 'form-control'}" ng-year-order="desc" ng-placeholder="Year, Month, Day"></ng-combo-date-picker>
                         </td>
                         <td>
                             <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
@@ -83,7 +83,7 @@
 
                     <tr id="trInputHeight" style="display: none">
                         <td>
-                            <input type="text" id="tbInput" ng-model="height" />
+                            <input type="text" id="tbInput" ng-model="userProfile.height" />
                         </td>
                         <td>
                             <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
@@ -92,7 +92,7 @@
 
                     <tr id="trInputWeight" style="display: none">
                         <td>
-                            <input type="text" id="tbInput" ng-model="weight" />
+                            <input type="text" id="tbInput" ng-model="userProfile.weight" />
                         </td>
                         <td>
                             <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
@@ -101,7 +101,7 @@
 
                     <tr id="trInputAF" style="display: none">
                         <td>
-                            <select class="form-control" id="cbActivityFactor" ng-model="activityFactor">
+                            <select class="form-control" id="cbActivityFactor" ng-model="userProfile.activityFactor">
                                 <option value="1.2">Sedentary - Little/No Exercise (Desk Job)</option>
                                 <option value="1.375">Lightly Active - Little Exercise (1-3 days/week)</option>
                                 <option value="1.55">Moderately Active - Moderate Exercise (3-5 days/week)</option>
@@ -129,37 +129,37 @@
                     <tbody>
                         <tr id="trName" style="display: table-row;">
                             <td>
-                                My Name Is {{ name }}
+                                My Name Is {{ userProfile.name }}
                             </td>
                         </tr>
                         <tr id="trGender" style="display: none;">
                             <td>
-                                I Am A {{ gender }}
+                                I Am A {{ userProfile.gender }}
                             </td>
                         </tr>
                         <tr id="trAge" style="display: none;">
                             <td>
-                                I Was Born on {{ birthday }}
+                                I Was Born on {{ userProfile.age }}
                             </td>
                         </tr>
                         <tr id="trHeight" style="display: none;">
                             <td>
-                                I Am {{ height }} Inches Tall
+                                I Am {{ userProfile.height }} Inches Tall
                             </td>
                         </tr>
                         <tr id="trWeight" style="display: none;">
                             <td>
-                                I Weigh {{ weight }} Pounds
+                                I Weigh {{ userProfile.weight }} Pounds
                             </td>
                         </tr>
                         <tr id="trActivityFactor" style="display: none;">
                             <td>
-                                My Activity Factor Is {{ activityFactor }}
+                                My Activity Factor Is {{ userProfile.activityFactor }}
                             </td>
                         </tr>
                         <tr id="trFitnessGoal" style="display: none;">
                             <td>
-                                My Fitness Goal Is To {{ fitnessGoal }}
+                                My Fitness Goal Is To {{ userProfile.fitnessGoal }}
                             </td>
                         </tr>
                     </tbody>

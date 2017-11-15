@@ -61,8 +61,10 @@
 
                     <tr id="trInputGender" style="display: none">
                         <td>
-                            <label><input type="radio" ng-model="gender" value="Male" /> Male</label>
-                            <label><input type="radio" ng-model="gender" value="Female" /> Female</label>
+                            <select class="form-control" id="cbGender" ng-model="gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>                                
+                            </select>
                         </td>
                         <td>
                             <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />

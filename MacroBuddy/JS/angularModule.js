@@ -1,7 +1,8 @@
 ﻿// Create AngularJS module and controller
-var myApp = angular.module('myApp', [])
+var myApp = angular.module('myApp', ['ngComboDatePicker'])
     .controller('mainController', ['$scope', function($scope) {
         $scope.question = 1;
+        $scope.months = "January, February, March, April, May, June, July, August, September, October, November, December";
 
         // Go to the next question (ng-Click function on button)
         $scope.nextQuestion = function() {
@@ -52,4 +53,5 @@ var myApp = angular.module('myApp', [])
                     break;
             }
         };
+        
     }]);

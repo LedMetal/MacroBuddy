@@ -282,19 +282,12 @@ var createProfile = function() {
 
 // jQuery document.ready function
 $(function() {
-    // Checks if fields have been blurred empty (left focus without input)
-    $('#inputName, #selectGender, #inputAge, #selectAmountOfExercise, #selectFitnessGoal').blur(function() {
-        if ($(this).val() == "") {
-            $(this).css('border', 'solid 1px red');
-        } else {
-            $(this).css('border', 'none');
-        }
-    });
-
     // Create hover event on button, changing background-color
     $('#btnEnter').hover(function() {
         $(this).css("background-color", "lightgrey");
     }, function() {
         $(this).css("background-color", "");
-    });
+        });
+
+    $('#tbName').focus();
 });

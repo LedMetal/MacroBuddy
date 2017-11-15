@@ -3,10 +3,13 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
     .controller('mainController', ['$scope', function($scope) {
         $scope.question = 1;
         $scope.months = "January, February, March, April, May, June, July, August, September, October, November, December";
+        $scope.progBar_current = 0;
 
         // Go to the next question (ng-Click function on button)
         $scope.nextQuestion = function() {
             $scope.question++;
+            $scope.progBar_current += (100 / 7);
+            $scope.rounded = $scope.progBar_current.toFixed(0);
 
             switch ($scope.question) {
                 case 2:     // Gender
@@ -49,6 +52,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
 
                     break;
                 case 8:     // Questions Finished
+                    $('#divInputTable').slideUp();
 
                     break;
             }

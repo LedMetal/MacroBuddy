@@ -49,7 +49,7 @@
             <p>Give MacroBuddy some basic information to get started!</p>
             
             <!-- Input Table -->
-            <div style="display: inline-block;">
+            <div id="divInputTable" style="display: inline-block;">
                 <table>
                     <tr id="trInputName">
                         <td>
@@ -110,7 +110,7 @@
                             </select>
                         </td>
                         <td>
-                            <input type="button" id="btnEnter" value="ENTER" ng-click="" />
+                            <input type="button" id="btnEnter" value="ENTER" ng-click="nextQuestion()" />
                         </td>
                     </tr>
                 </table>
@@ -118,7 +118,7 @@
 
             <div style="display: inline-block;">
                 <!-- Display Table -->
-                <table style="font-size: larger" class="table-striped">
+                <table style="font-size: larger" class="table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>
@@ -164,6 +164,12 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div class="container" style="width: 33%;">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="{{ progBar_current }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ progBar_current }}%">{{ rounded }}%</div>
+                </div>
             </div>
 
         </center>

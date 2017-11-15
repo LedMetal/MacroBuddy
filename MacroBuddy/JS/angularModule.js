@@ -33,7 +33,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                     $('#trInputAge')[0].style.display = 'none';
                     $('#trInputHeight')[0].style.display = '';
 
-                    $('#tbFeet').focus();
+                    $('#cbFeet').focus();
                     break;
                 case 5:     // Weight
                     $('#trWeight')[0].style.display = '';
@@ -125,6 +125,44 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
             } else {
                 $scope.userProfile.height = (feet * 12) + inches;
                 $scope.nextQuestion();
+            }
+        };
+
+        // Weight Verification
+        $scope.weightVerification = function(weight) {
+            if (weight != null) {
+                if (/^[0-9]+[\.]?[0-9]+$/.test(weight)) {
+                    $scope.userProfile.weight = weight;
+                    $scope.nextQuestion();
+                } else {
+                    alert("Please enter a valid weight in the given field");
+                    $("#tbWeight")[0].focus();
+                }
+            } else {
+                alert("Please enter your weight (in lbs) in the given field");
+                $('#tbWeight').focus();
+            }
+        };
+
+        // Activity Factor Verification
+        $scope.activityFactorVerification = function(activityFactor) {
+            if (activityFactor != null) {
+                $scope.userProfile.activityFactor = activityFactor;
+                $scope.nextQuestion();
+            } else {
+                alert("Please select the amount of exercise that most resembles your current lifestyle");
+                $('#cbActivityFactor').focus();
+            }
+        };
+
+        // Fitness Goal Verification
+        var fitnessGoalVerification = function(fitnessGoal) {
+            if (fitnessGoal != null) {
+                $scope.userProfile.fitnessGoal = fitnessGoal;
+                $scope.nextQuestion();
+            } else {
+                alert("Please select the fitness goal that you have");
+                $('#cbFitnessGoal').focus();
             }
         };
 

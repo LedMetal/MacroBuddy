@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\main.css" />
+    <Content Include="CSS\results.css" />
     <Content Include="HTML\main.html" />
     <Content Include="HTML\results.html" />
     <Content Include="Images\banner.png" />

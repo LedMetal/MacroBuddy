@@ -2,4 +2,4 @@
 
 var userProfile = JSON.parse(userProfile_JSON);
 
-//console.log(userProfile);
+console.log(userProfile);

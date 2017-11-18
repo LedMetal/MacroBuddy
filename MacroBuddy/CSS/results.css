@@ -1,0 +1,9 @@
+﻿#headerBar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(50,50,50);
+}
+
+#logo {
+    width: 10%;
+}

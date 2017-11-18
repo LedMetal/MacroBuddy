@@ -6,6 +6,17 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
         $scope.months = "January, February, March, April, May, June, July, August, September, October, November, December";
         $scope.progBar_current = 0;
 
+        // User Profile
+        $scope.userProfile = {
+            name: "",
+            gender: "",
+            age: 0,
+            height: 0,
+            weight: 0,
+            activityFactor: 0,
+            fitnessGoal: ""
+        };
+
         // Go to the next question (ng-Click function on button)
         $scope.nextQuestion = function() {
             $scope.question++;
@@ -81,17 +92,6 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
 
                     break;
             }
-        };
-
-        // User Profile
-        $scope.userProfile = {
-            name: "",
-            gender: "",
-            age: 0,
-            height: 0,
-            weight: 0,
-            activityFactor: 0,
-            fitnessGoal: ""
         };
 
         // Name Verification
@@ -192,18 +192,14 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
             $scope.userProfile.fat = $scope.calculateFat($scope.userProfile.fitnessGoal, $scope.userProfile.dailyCalories);
             $scope.userProfile.carbohydrate = $scope.calculateCarb($scope.userProfile.fitnessGoal, $scope.userProfile.dailyCalories);
 
-            $log.log($scope.userProfile);
+            // Stringify userProfile object
+            var userProfile_JSON = JSON.stringify($scope.userProfile);
 
-            //// Stringify userProfile object
-            //var userProfile_JSON = JSON.stringify(userProfile);
-            //// Set localStorage for userProfile_JSON
-            //localStorage.setItem("userProfile", userProfile_JSON);
+            // Set localStorage for userProfile_JSON
+            window.localStorage.setItem("userProfile", userProfile_JSON);
 
-            //// Navigate to results page
-            //window.location.href = "../HTML/results.html";
-
-            //// DEBUG - Display userProfile in browser console
-            //console.log(userProfile);
+            // Navigate to results page
+            window.location.href = "../HTML/results.html";
         };
 
         $scope.calculateBMR = function(gender, weight, height, age) {

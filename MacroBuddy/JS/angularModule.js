@@ -1,6 +1,7 @@
 ﻿// Create AngularJS module and controller
 var myApp = angular.module('myApp', ['ngComboDatePicker'])
-    .controller('mainController', ['$scope', function($scope) {
+    .controller('mainController', ['$scope', '$log', function($scope, $log) {
+        $scope.$log = $log;
         $scope.question = 1;
         $scope.months = "January, February, March, April, May, June, July, August, September, October, November, December";
         $scope.progBar_current = 0;
@@ -181,5 +182,109 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                 $('#cbFitnessGoal').focus();
             }
         };
+
+        // Function called on ng-Click of btnGoMB
+        $scope.goMacroBuddy = function() {
+            $scope.userProfile.bmr = $scope.calculateBMR($scope.userProfile.gender, $scope.userProfile.weight, $scope.userProfile.height, $scope.userProfile.age);
+            $scope.userProfile.tdee = $scope.calculateTDEE($scope.userProfile.bmr, $scope.userProfile.activityFactor);
+            $scope.userProfile.dailyCalories = $scope.calculateDailyCalories($scope.userProfile.fitnessGoal, $scope.userProfile.tdee);
+            $scope.userProfile.protein = $scope.calculateProtein($scope.userProfile.fitnessGoal, $scope.userProfile.dailyCalories);
+            $scope.userProfile.fat = $scope.calculateFat($scope.userProfile.fitnessGoal, $scope.userProfile.dailyCalories);
+            $scope.userProfile.carbohydrate = $scope.calculateCarb($scope.userProfile.fitnessGoal, $scope.userProfile.dailyCalories);
+
+            $log.log($scope.userProfile);
+
+            //// Stringify userProfile object
+            //var userProfile_JSON = JSON.stringify(userProfile);
+            //// Set localStorage for userProfile_JSON
+            //localStorage.setItem("userProfile", userProfile_JSON);
+
+            //// Navigate to results page
+            //window.location.href = "../HTML/results.html";
+
+            //// DEBUG - Display userProfile in browser console
+            //console.log(userProfile);
+        };
+
+        $scope.calculateBMR = function(gender, weight, height, age) {
+            if (gender == "Male") {
+                return 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age);
+            } else if (gender == "Female") {
+                return 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age);
+            }
+        };
+
+        $scope.calculateTDEE = function(bmr, activityFactor) {
+            return bmr * activityFactor;
+        };
+
+        $scope.calculateDailyCalories = function(fitnessGoal, tdee) {
+            switch (fitnessGoal) {
+                case "Weight Loss":
+                    return tdee - 500;
+
+                    break;
+                case "Maintain":
+                    return tdee;
+
+                    break;
+                case "Mass Gain":
+                    return tdee + 500;
+
+                    break;
+            }
+        };
+
+        $scope.calculateProtein = function(fitnessGoal, dailyCalories) {
+            switch (fitnessGoal) {
+                case "Weight Loss":
+                    return (0.45 * dailyCalories) / 4;
+
+                    break;
+                case "Maintain":
+                    return (0.3 * dailyCalories) / 4;
+
+                    break;
+                case "Mass Gain":
+                    return (0.3 * dailyCalories) / 4;
+
+                    break;
+            }
+        };
+
+        $scope.calculateFat = function(fitnessGoal, dailyCalories) {
+            switch (fitnessGoal) {
+                case "Weight Loss":
+                    return (0.35 * dailyCalories) / 9;
+
+                    break;
+                case "Maintain":
+                    return (0.3 * dailyCalories) / 9;
+
+                    break;
+                case "Mass Gain":
+                    return (0.2 * dailyCalories) / 9;
+
+                    break;
+            }
+        };
+
+        $scope.calculateCarb = function(fitnessGoal, dailyCalories) {
+            switch (fitnessGoal) {
+                case "Weight Loss":
+                    return (0.2 * dailyCalories) / 4;
+
+                    break;
+                case "Maintain":
+                    return (0.4 * dailyCalories) / 4;
+
+                    break;
+                case "Mass Gain":
+                    return (0.5 * dailyCalories) / 4;
+
+                    break;
+            }
+        };
+
 
     }]);

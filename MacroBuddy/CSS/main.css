@@ -3,9 +3,10 @@
 }
 
 body {
-    font-size: large;
+    font-size: medium;
     color: white;
     background-color: rgb(29, 139, 107);
+    padding-bottom: 150px;
 }
 
 #headerBar {
@@ -39,4 +40,8 @@ input[type=button] {
 
 input[name=radioAF] {
     width: 100%;
+}
+
+#footerBar {
+    background-color: rgb(50,50,50);
 }

@@ -42,6 +42,11 @@ input[name=radioAF] {
     width: 100%;
 }
 
+#divGo {
+    color: white;
+    width: 100%;
+}
+
 #footerBar {
     background-color: rgb(50,50,50);
 }

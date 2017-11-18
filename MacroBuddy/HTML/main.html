@@ -1,233 +1,240 @@
 ﻿<!DOCTYPE html>
 <html ng-app="myApp" ng-controller="mainController">
 
-<head>
-    <meta charset="utf-8" />
-    <title>MacroBuddy - One-Stop Fitness</title>
+    <head>
+        <meta charset="utf-8" />
+        <title>MacroBuddy - One-Stop Fitness</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CSS/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="../CSS/main.css">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"></script>
-    <script>!window.jQuery && document.write('<script src="../JS/jquery-1.4.2.min.js"><\/script>')</script>
-    <script src="https://code.angularjs.org/1.6.6/angular.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ng-combo-date-picker@1.5.1/source/ngComboDatePicker.min.js"></script>
-    <script src="../JS/angularModule.js"></script>
-    <script src="../JS/main.js"></script>
-</head>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
+        <script>!window.jQuery && document.write('<script src="../JS/jquery-1.4.2.min.js"><\/script>')</script>
+        <script src="https://code.angularjs.org/1.6.6/angular.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/ng-combo-date-picker@1.5.1/source/ngComboDatePicker.min.js"></script>
+        <script src="../JS/angularModule.js"></script>
+        <script src="../JS/main.js"></script>
+    </head>
 
-<body>
-    <div id="headerBar">
-        <center>
-            <img src="../Images/banner.png" id="banner" />
-        </center>
-    </div>
+    <body>
+        <!-- Header Bar -->
+        <div id="headerBar">
+            <center>
+                <img src="../Images/banner.png" id="banner" />
+            </center>
+        </div>
 
-    <div id="allText">
-        <center>
-            <div id="introBlock">
-                <h3>Welcome to MacroBuddy, your own personal nutritionist!</h3>
+        <div id="allText">
+            <center>
+                <!-- Introduction Block -->
+                <div id="introBlock">
+                    <h3>Welcome to MacroBuddy, your own personal nutritionist!</h3>
 
-                <p>
-                    Have you ever tried coming up with a diet plan that works for you? How many of them showed you results, or how many did you
-                    stick with long enough to see them? Do you know what three nutrient bases make up your macronutrients, and how
-                    much of each you should be eating?
-                </p>
-                <p>
-                    Well, MacroBuddy is here to alleviate you from all the calculations and formulae you'll need to go through to figure out
-                    your macronutrients. MacroBuddy is your one-stop location to get all your personalized macronutrition information
-                    to get you prepared and on your way to meal prepping like the pros! All it takes is some basic information and
-                    MacroBuddy will send you on your way!
-                </p>
-            </div>
+                    <p>
+                        Have you ever tried coming up with a diet plan that works for you? How many of them showed you results, or how many did you
+                        stick with long enough to see them? Do you know what three nutrient bases make up your macronutrients, and how
+                        much of each you should be eating?
+                    </p>
+                    <p>
+                        Well, MacroBuddy is here to alleviate you from all the calculations and formulae you'll need to go through to figure out
+                        your macronutrients. MacroBuddy is your one-stop location to get all your personalized macronutrition information
+                        to get you prepared and on your way to meal prepping like the pros! All it takes is some basic information and
+                        MacroBuddy will send you on your way!
+                    </p>
+                </div>
 
-            <hr />
+                <hr />
 
-            <h3>Let's Start With Your Information</h3>
-            <p>Give MacroBuddy some basic information to get started!</p>
+                <h3>Let's Start With Your Information</h3>
+                <p>Give MacroBuddy some basic information to get started!</p>
             
-            <!-- Input Table -->
-            <div id="divInputTable" style="display: inline-block;">
-                <table>
-                    <tr id="trInputName">
-                        <td>
-                            <input type="text" id="tbName" ng-model="tempName" />
-                        </td>
-                        <td>
-                            <input type="button" id="btnEnter" value="ENTER" ng-click="nameVerification(tempName)" />
-                        </td>
-                    </tr>
+                <!-- User Input Table -->
+                <div id="divInputTable" style="display: inline-block;">
+                    <table>
+                        <tr id="trInputName">
+                            <td>
+                                <input type="text" id="tbName" ng-model="tempName" />
+                            </td>
+                            <td>
+                                <input type="button" id="btnEnter" value="ENTER" ng-click="nameVerification(tempName)" />
+                            </td>
+                        </tr>
 
-                    <tr id="trInputGender" style="display: none">
-                        <td>
-                            <select class="form-control" id="cbGender" ng-model="tempGender">
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>                                
-                            </select>
-                        </td>
-                        <td>
-                            <input type="button" id="btnEnter" value="ENTER" ng-click="genderVerification(tempGender)" />
-                        </td>
-                    </tr>
-
-                    <tr id="trInputAge" style="display: none">
-                        <td>
-                            <input type="date" id="tbDate" ng-model="birthday" class="form-control" />
-                        </td>
-                        <td>
-                            <input type="button" id="btnEnter" value="ENTER" ng-click="calculateAge(birthday)" />
-                        </td>
-                    </tr>
-
-                    <tr id="trInputHeight" style="display: none">
-                        <td>
-                            <label for="cbFeet">
-                                Feet:
-                                <select class="form-control col-xs-1" id="cbFeet" ng-model="tempFeet">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
+                        <tr id="trInputGender" style="display: none">
+                            <td>
+                                <select class="form-control" id="cbGender" ng-model="tempGender">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>                                
                                 </select>
-                            </label>
+                            </td>
+                            <td>
+                                <input type="button" id="btnEnter" value="ENTER" ng-click="genderVerification(tempGender)" />
+                            </td>
+                        </tr>
 
-                            <label for="cbInches">
-                                Inches:
-                                <select class="form-control col-xs-1" id="cbInches" ng-model="tempInches">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
+                        <tr id="trInputAge" style="display: none">
+                            <td>
+                                <input type="date" id="tbDate" ng-model="birthday" class="form-control" />
+                            </td>
+                            <td>
+                                <input type="button" id="btnEnter" value="ENTER" ng-click="calculateAge(birthday)" />
+                            </td>
+                        </tr>
+
+                        <tr id="trInputHeight" style="display: none">
+                            <td>
+                                <label for="cbFeet">
+                                    Feet:
+                                    <select class="form-control col-xs-1" id="cbFeet" ng-model="tempFeet">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                </label>
+
+                                <label for="cbInches">
+                                    Inches:
+                                    <select class="form-control col-xs-1" id="cbInches" ng-model="tempInches">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                    </select>
+                                </label>
+                            </td>
+                            <td>
+                                <input type="button" id="btnEnter" value="ENTER" ng-click="heightVerification(tempFeet, tempInches)" />
+                            </td>
+                        </tr>
+
+                        <tr id="trInputWeight" style="display: none">
+                            <td>
+                                <input type="text" id="tbWeight" ng-model="tempWeight" />
+                            </td>
+                            <td>
+                                <input type="button" id="btnEnter" value="ENTER" ng-click="weightVerification(tempWeight)" />
+                            </td>
+                        </tr>
+
+                        <tr id="trInputAF" style="display: none">
+                            <td>
+                                <select class="form-control" id="cbActivityFactor" ng-model="tempActivityFactor">
+                                    <option value="1.2">Sedentary - Little/No Exercise (Desk Job)</option>
+                                    <option value="1.375">Lightly Active - Little Exercise (1-3 days/week)</option>
+                                    <option value="1.55">Moderately Active - Moderate Exercise (3-5 days/week)</option>
+                                    <option value="1.725">Very Active - Heavey Exercise (6-7 days/week)</option>
+                                    <option value="1.9">Extremely Active - Very Heavy Exercise (2 times/day)</option>
                                 </select>
-                            </label>
-                        </td>
-                        <td>
-                            <input type="button" id="btnEnter" value="ENTER" ng-click="heightVerification(tempFeet, tempInches)" />
-                        </td>
-                    </tr>
+                            </td>
+                            <td>
+                                <input type="button" id="btnEnter" value="ENTER" ng-click="activityFactorVerification(tempActivityFactor)" />
+                            </td>
+                        </tr>
 
-                    <tr id="trInputWeight" style="display: none">
-                        <td>
-                            <input type="text" id="tbWeight" ng-model="tempWeight" />
-                        </td>
-                        <td>
-                            <input type="button" id="btnEnter" value="ENTER" ng-click="weightVerification(tempWeight)" />
-                        </td>
-                    </tr>
-
-                    <tr id="trInputAF" style="display: none">
-                        <td>
-                            <select class="form-control" id="cbActivityFactor" ng-model="tempActivityFactor">
-                                <option value="1.2">Sedentary - Little/No Exercise (Desk Job)</option>
-                                <option value="1.375">Lightly Active - Little Exercise (1-3 days/week)</option>
-                                <option value="1.55">Moderately Active - Moderate Exercise (3-5 days/week)</option>
-                                <option value="1.725">Very Active - Heavey Exercise (6-7 days/week)</option>
-                                <option value="1.9">Extremely Active - Very Heavy Exercise (2 times/day)</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="button" id="btnEnter" value="ENTER" ng-click="activityFactorVerification(tempActivityFactor)" />
-                        </td>
-                    </tr>
-
-                    <tr id="trInputFG" style="display: none">
-                        <td>
-                            <select class="form-control" id="cbFitnessGoal" ng-model="tempFitnessGoal">
-                                <option value="Lose Weight">Lose Weight</option>
-                                <option value="Maintain">Maintain</option>
-                                <option value="Mass Gain">Mass Gain</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="button" id="btnEnter" value="ENTER" ng-click="fitnessGoalVerification(tempFitnessGoal)" />
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div style="display: inline-block;">
-                <!-- Display Table -->
-                <table style="font-size: larger" class="table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>
-                                Personal Information
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="trName" style="display: table-row;">
+                        <tr id="trInputFG" style="display: none">
                             <td>
-                                My Name Is {{ tempName }}
+                                <select class="form-control" id="cbFitnessGoal" ng-model="tempFitnessGoal">
+                                    <option value="Lose Weight">Lose Weight</option>
+                                    <option value="Maintain">Maintain</option>
+                                    <option value="Mass Gain">Mass Gain</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="button" id="btnEnter" value="ENTER" ng-click="fitnessGoalVerification(tempFitnessGoal)" />
                             </td>
                         </tr>
-                        <tr id="trGender" style="display: none;">
-                            <td>
-                                I Am A {{ tempGender }}
-                            </td>
-                        </tr>
-                        <tr id="trAge" style="display: none;">
-                            <td>
-                                I Am {{ userProfile.age }} Years Old
-                            </td>
-                        </tr>
-                        <tr id="trHeight" style="display: none;">
-                            <td>
-                                I Am {{ tempFeet }} Feet {{ tempInches }} Inches Tall
-                            </td>
-                        </tr>
-                        <tr id="trWeight" style="display: none;">
-                            <td>
-                                I Weigh {{ tempWeight }} Pounds
-                            </td>
-                        </tr>
-                        <tr id="trActivityFactor" style="display: none;">
-                            <td>
-                                My Activity Factor Is {{ tempActivityFactor }}
-                            </td>
-                        </tr>
-                        <tr id="trFitnessGoal" style="display: none;">
-                            <td>
-                                My Fitness Goal Is To {{ tempFitnessGoal }}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="container" style="width: 33%; padding-bottom: 10px;">
-                <!-- Progression Bar -->
-                <div class="progress" id="divProgBar">
-                    <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="{{ progBar_current }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ progBar_current }}%">{{ rounded }}%</div>
+                    </table>
                 </div>
 
-                <!-- GoMB Button -->
-                <div class="well" style="display: none;" id="divGo">
-                    <input type="button" id="btnGoMB" class="btn btn-primary" style="color: white; width: 100%;" value="Go MacroBuddy!" />
+                <div style="display: inline-block;">
+                    <!-- Display Table -->
+                    <table style="font-size: larger" class="table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Personal Information
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="trName" style="display: table-row;">
+                                <td>
+                                    My Name Is {{ tempName }}
+                                </td>
+                            </tr>
+                            <tr id="trGender" style="display: none;">
+                                <td>
+                                    I Am A {{ tempGender }}
+                                </td>
+                            </tr>
+                            <tr id="trAge" style="display: none;">
+                                <td>
+                                    I Am {{ userProfile.age }} Years Old
+                                </td>
+                            </tr>
+                            <tr id="trHeight" style="display: none;">
+                                <td>
+                                    I Am {{ tempFeet }} Feet {{ tempInches }} Inches Tall
+                                </td>
+                            </tr>
+                            <tr id="trWeight" style="display: none;">
+                                <td>
+                                    I Weigh {{ tempWeight }} Pounds
+                                </td>
+                            </tr>
+                            <tr id="trActivityFactor" style="display: none;">
+                                <td>
+                                    My Activity Factor Is {{ tempActivityFactor }}
+                                </td>
+                            </tr>
+                            <tr id="trFitnessGoal" style="display: none;">
+                                <td>
+                                    My Fitness Goal Is To {{ tempFitnessGoal }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
 
-        </center>
-    </div>
+                <div class="container" style="width: 25%; padding-bottom: 10px;">
+                    <!-- Progression Bar -->
+                    <div class="progress" id="divProgBar">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="{{ progBar_current }}" aria-valuemin="0" aria-valuemax="10" style="width:{{ progBar_current }}%">{{ rounded }}%</div>
+                    </div>
+
+                    <!-- GoMB Button -->
+                    <div class="well" style="display: none;" id="divGo">
+                        <input type="button" id="btnGoMB" class="btn btn-primary" value="Go MacroBuddy!" />
+                    </div>
+                </div>
+
+            </center>
+        </div>
     
-    <div id="footerBar" class="footer fixed-bottom">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla rhoncus ex elit, vel lacinia metus porttitor eu. Nulla vitae nisl quis dui elementum aliquam. Nam id tincidunt neque, eu elementum diam. Fusce quis nibh vehicula, accumsan mauris pulvinar, mattis felis. Fusce pellentesque venenatis lorem, et congue ante interdum et. Mauris bibendum quam volutpat massa commodo volutpat. In ut risus laoreet, congue nisi ut, tincidunt magna. Suspendisse semper pharetra leo, eu</p>
-    </div>
+        <!-- Footer Bar -->
+        <div id="footerBar" class="footer fixed-bottom">
+            <center>
+                <p></p>
+                <p style="display: inline-block; float: inherit;"><strong>Disclaimer:</strong> Always consult a physician before adopting a new dietary/fitness regime.</p>
+                <p style="display: inline-block; float: right;">&copy; LedMetal 2017</p>
+            </center>
+        </div>
 
-</body>
+    </body>
 
 </html>

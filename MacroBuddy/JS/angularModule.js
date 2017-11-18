@@ -13,6 +13,8 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
 
             switch ($scope.question) {
                 case 2:     // Gender
+                    $('#question')[0].innerHTML = "What is your <strong>gender</strong>?";
+
                     $('#trInputName')[0].style.display = 'none';
                     $('#trInputGender')[0].style.display = '';
 
@@ -20,6 +22,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                     $('#cbGender').focus();
                     break;
                 case 3:     // Age
+                    $('#question')[0].innerHTML = "What is your <strong>date of birth</strong>?";
 
                     $('#trInputGender')[0].style.display = 'none';
                     $('#trInputAge')[0].style.display = '';
@@ -28,6 +31,8 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                     $('#tbDate').focus();
                     break;
                 case 4:     // Height
+                    $('#question')[0].innerHTML = "What is your <strong>height</strong>?";
+
                     $('#trHeight')[0].style.display = '';
 
                     $('#trInputAge')[0].style.display = 'none';
@@ -36,6 +41,8 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                     $('#cbFeet').focus();
                     break;
                 case 5:     // Weight
+                    $('#question')[0].innerHTML = "What is your <strong>weight (lbs)</strong>?";
+
                     $('#trWeight')[0].style.display = '';
 
                     $('#trInputHeight')[0].style.display = 'none';
@@ -44,6 +51,8 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                     $('#tbWeight').focus();
                     break;
                 case 6:     // Activity Factor
+                    $('#question')[0].innerHTML = "What is your <strong>level of activity</strong>?";
+
                     $('#trActivityFactor')[0].style.display = '';
 
                     $('#trInputWeight')[0].style.display = 'none';
@@ -52,6 +61,8 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                     $('#cbActivityFactor').focus();
                     break;
                 case 7:     // Fitness Goal
+                    $('#question')[0].innerHTML = "What are your <strong>fitness goals</strong>?";
+
                     $('#trFitnessGoal')[0].style.display = '';
 
                     $('#trInputAF')[0].style.display = 'none';
@@ -60,6 +71,8 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                     $('#cbFitnessGoal').focus();
                     break;
                 case 8:     // Questions Finished
+                    $('#question')[0].innerHTML = "That's all! Click <strong>Go MacroBuddy!</strong> to get your reesults!";
+
                     $('#divInputTable').slideUp();
 
                     $('#divProgBar').slideUp();

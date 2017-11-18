@@ -87,10 +87,10 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
         $scope.userProfile = {
             name: "",
             gender: "",
-            age: "",
-            height: "",
-            weight: "",
-            activityFactor: "",
+            age: 0,
+            height: 0,
+            weight: 0,
+            activityFactor: 0,
             fitnessGoal: ""
         };
 
@@ -149,7 +149,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
         $scope.weightVerification = function(weight) {
             if (weight != null) {
                 if (/^[0-9]+[\.]?[0-9]+$/.test(weight)) {
-                    $scope.userProfile.weight = weight;
+                    $scope.userProfile.weight = parseInt(weight);
                     $scope.nextQuestion();
                 } else {
                     alert("Please enter a valid weight in the given field");
@@ -164,7 +164,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
         // Activity Factor Verification
         $scope.activityFactorVerification = function(activityFactor) {
             if (activityFactor != null) {
-                $scope.userProfile.activityFactor = activityFactor;
+                $scope.userProfile.activityFactor = parseFloat(activityFactor);
                 $scope.nextQuestion();
             } else {
                 alert("Please select the amount of exercise that most resembles your current lifestyle");
@@ -220,7 +220,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
 
         $scope.calculateDailyCalories = function(fitnessGoal, tdee) {
             switch (fitnessGoal) {
-                case "Weight Loss":
+                case "Lose Weight":
                     return tdee - 500;
 
                     break;
@@ -237,7 +237,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
 
         $scope.calculateProtein = function(fitnessGoal, dailyCalories) {
             switch (fitnessGoal) {
-                case "Weight Loss":
+                case "Lose Weight":
                     return (0.45 * dailyCalories) / 4;
 
                     break;
@@ -254,7 +254,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
 
         $scope.calculateFat = function(fitnessGoal, dailyCalories) {
             switch (fitnessGoal) {
-                case "Weight Loss":
+                case "Lose Weight":
                     return (0.35 * dailyCalories) / 9;
 
                     break;
@@ -271,7 +271,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
 
         $scope.calculateCarb = function(fitnessGoal, dailyCalories) {
             switch (fitnessGoal) {
-                case "Weight Loss":
+                case "Lose Weight":
                     return (0.2 * dailyCalories) / 4;
 
                     break;
@@ -285,6 +285,5 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                     break;
             }
         };
-
 
     }]);

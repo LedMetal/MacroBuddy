@@ -90,7 +90,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
             age: "",
             height: "",
             weight: "",
-            activityFactory: "",
+            activityFactor: "",
             fitnessGoal: ""
         };
 
@@ -140,7 +140,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
             if ((feet == null) || (inches == null)) {
                 alert("Please fill in both fields for your height in feet and inches");
             } else {
-                $scope.userProfile.height = (feet * 12) + inches;
+                $scope.userProfile.height = (parseInt(feet) * 12) + parseInt(inches);
                 $scope.nextQuestion();
             }
         };

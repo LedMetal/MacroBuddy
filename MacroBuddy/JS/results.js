@@ -6,7 +6,10 @@
 
 var userProfile = {
     gender: "Male",
-    bmr: 1800
+    bmr: 1800,
+    tdee: 2900,
+    fitnessGoal: "Lose Weight",
+    dca: 2400
 };
 
 // jQuery document ready function
@@ -20,6 +23,15 @@ $(function() {
     }
 
     // Display BMR Result
-    $('#bmrResult')[0].innerHTML = "<span style='font-size: 20px;'><strong>" + userProfile.bmr + "</strong></span>";
+    $('#bmrResult')[0].innerHTML = "<span style='font-size: 20px;'><strong>" + userProfile.bmr + " kCal</strong></span>";
+
+    // Display TDEE Result
+    $('#tdeeResult')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.tdee + " kCal</strong></span>";
+
+    // Display Fitness Goal
+    $('#fitnessGoal')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.fitnessGoal + " </strong></span>";
+
+    // Display DCA Result
+    $('#dailyCaloricAllowance')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.dca + " </strong></span>";
 
 });

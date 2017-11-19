@@ -20,74 +20,95 @@
         <!-- Header Bar -->
         <div id="headerBar">
             <center>
-                <img src="../Images/logo.png" id="logo" style="display: inline-block;" />
-                <h1 style="display: inline-block; color: white">MacroBuddy Results</h1>
+                <img src="../Images/logo.png" id="logo" />
+                <h1>MacroBuddy Results</h1>
             </center>
         </div>
 
-        <!-- BMR Result Table -->
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th colspan=2>
-                        <strong style="font-size: 30px;">B</strong>asal <strong style="font-size: 30px;">M</strong>etabolic <strong style="font-size: 30px;">R</strong>ate
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="columnLabel">Definition</td>
-                    <td>BMR is the amount of energy expended at rest daily</td>
-                </tr>
+        <center>
+            <!-- BMR Result Table -->
+            <div style="display: inline-block;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan=2>
+                                Basal Metabolic Rate
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="columnLabel">Definition</td>
+                            <td>BMR is the amount of energy expended at rest daily</td>
+                        </tr>
 
-                <tr>
-                    <td class="columnLabel">Formula</td>
-                    <td id="bmrFormula"></td>
-                </tr>
+                        <tr>
+                            <td class="columnLabel">Formula</td>
+                            <td id="bmrFormula"></td>
+                        </tr>
 
-                <tr>
-                    <td class="columnLabel">Result</td>
-                    <td id="bmrResult"></td>
-                </tr>
+                        <tr>
+                            <td class="columnLabel">Result</td>
+                            <td id="bmrResult"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                <tr>
-                    <td class="columnLabel">Links</td>
-                    <td><a href="https://en.wikipedia.org/wiki/Basal_metabolic_rate">Wikipedia</a></td>
-                </tr>
-            </tbody>
-        </table>
+            <!-- TDEE Result Table -->
+            <div style="display: inline-block;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan=2>Total Daily Energy Expenditure</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="columnLabel">Definition</td>
+                            <td>TDEE is the amount of calories needed to maintain your weight, in accordance to your current activity level</td>
+                        </tr>
 
-        <!-- TDEE Result Table -->
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th colspan=2>
-                        <strong style="font-size: 30px;">T</strong>otal <strong style="font-size: 30px;">D</strong>aily <strong style="font-size: 30px;">E</strong>nergy <strong style="font-size: 30px;">E</strong>xpenditure
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="columnLabel">Definition</td>
-                    <td>TDEE is the amount of calories needed to maintain your weight, in accordance to your current activity level</td>
-                </tr>
+                        <tr>
+                            <td class="columnLabel">Formula</td>
+                            <td><strong>BMR</strong> x <strong>Activity Factor</strong></td>
+                        </tr>
 
-                <tr>
-                    <td class="columnLabel">Formula</td>
-                    <td id="tdeeFormula"></td>
-                </tr>
+                        <tr>
+                            <td class="columnLabel">Result</td>
+                            <td id="tdeeResult"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </center>
 
-                <tr>
-                    <td class="columnLabel">Result</td>
-                    <td id="tdeeResult"></td>
-                </tr>
+        <center>
+            <div style="display: inline-block;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th colspan=2>Caloric Allowance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="columnLabel">Fitness Goal</td>
+                            <td id="fitnessGoal"></td>
+                        </tr>
 
-                <tr>
-                    <td class="columnLabel">Links</td>
-                    <td><a href="">Link</a></td>
-                </tr>
-            </tbody>
-        </table>
+                        <tr>
+                            <td class="columnLabel">Daily Caloric Allowance</td>
+                            <td id="dailyCaloricAllowance"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="display: inline-block;">
+
+            </div>
+        </center>
 
         <!-- Footer Bar -->
         <div id="footerBar" class="footer fixed-bottom">
@@ -98,5 +119,5 @@
             </center>
         </div>
 
-    </body>
+</body>
 </html>

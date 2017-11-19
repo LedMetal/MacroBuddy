@@ -84,8 +84,26 @@
         </center>
 
         <center>
+            <!-- Calories Per Gram Horizontal Bar Graph -->
+            <div style="display: inline-block;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Calories Per Gram Breakdown</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <canvas id="caloriesPerGram"></canvas>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <!-- Caloric Allowance Table -->
-            <div style="display: inline-block; vertical-align: top">
+            <div style="display: inline-block; vertical-align: top;">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -107,17 +125,17 @@
             </div>
 
             <!-- MacroNutrients Breakdown Pie Chart -->
-            <div style="display: inline-block;">
+            <div style="display: inline-block; vertical-align: top;">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Macronutrients Breakdown</th>
+                            <th>MacroRatios Breakdown (%)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>
-                                <canvas id="macroBreakdown"></canvas>
+                                <canvas id="macroBreakdown" height="165"></canvas>
                             </td>
                         </tr>
                     </tbody>
@@ -126,29 +144,26 @@
         </center>
 
         <center>
-            <!-- Calories Per Gram Horizontal Bar Graph -->
+            <!-- Personal MacroBuddy Results Bar Graph -->
             <div style="display: inline-block;">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Calories Per Gram Breakdown</th>
+                            <th>MacroBuddy Personal Results</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>
-                                <canvas id="caloriesPerGram"></canvas>
+                                <canvas id="macroBuddyResults" width="600" height="400"></canvas>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
-            <!-- Personal MacroBuddy Results Bar Graph -->
-            <div style="display: inline-block;">
-
-            </div>
         </center>
+
+        <hr style="border-color: black;" />
 
         <!-- Footer Bar -->
         <div id="footerBar" class="footer fixed-bottom">

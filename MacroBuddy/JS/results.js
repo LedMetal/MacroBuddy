@@ -26,19 +26,57 @@ $(function() {
     }
 
     // Display BMR Result
-    $('#bmrResult')[0].innerHTML = "<span style='font-size: 20px;'><strong>" + userProfile.bmr + " kCal</strong></span>";
+    $('#bmrResult')[0].innerHTML = "<span style='font-size: 20px;'><strong>" + userProfile.bmr.toFixed(2) + " kCal</strong></span>";
 
     // Display TDEE Result
-    $('#tdeeResult')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.tdee + " kCal</strong></span>";
+    $('#tdeeResult')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.tdee.toFixed(2) + " kCal</strong></span>";
 
     // Display Fitness Goal
     $('#fitnessGoal')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.fitnessGoal + " </strong></span>";
 
     // Display DCA Result
-    $('#dailyCaloricAllowance')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.dca + " </strong></span>";
+    $('#dailyCaloricAllowance')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.dailyCalories.toFixed(2) + " </strong></span>";
 
     Chart.defaults.global.defaultFontColor = "white";
 
+    // Calories Per Gram Horizontal Bar Graph
+    var ctx_caloriesPerGram = $('#caloriesPerGram');
+    var caloriesPerGramChart = new Chart(ctx_caloriesPerGram, {
+        type: "horizontalBar",
+        data: {
+            labels: ["Protein", "Carbohydrates", "Fats"],
+            datasets: [{
+                label: "Calories Per Gram",
+                data: [4, 4, 9],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    display: false,
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+    // MacroNutrient Breakdown Pie Graph
     var ctx_macroBreakdown = $('#macroBreakdown');
     var macroBreakdownChart = new Chart(ctx_macroBreakdown, {
         type: "pie",
@@ -69,23 +107,20 @@ $(function() {
                     }
                 }],
                 xAxes: [{
-                    display: false,
-                    gridLines: {
-                        color: "black"
-                    }
+                    display: false
                 }]
             }
         }
     });
 
-    var ctx_caloriesPerGram = $('#caloriesPerGram');
-    var caloriesPerGramChart = new Chart(ctx_caloriesPerGram, {
-        type: "horizontalBar",
+    var ctx_macroBuddyResults = $('#macroBuddyResults');
+    var macroBuddyResultsChart = new Chart(ctx_macroBuddyResults, {
+        type: "bar",
         data: {
             labels: ["Protein", "Carbohydrates", "Fats"],
             datasets: [{
-                label: "Calories Per Gram",
-                data: [4, 4, 9],
+                label: "MacroBuddy Results",
+                data: [userProfile.protein.toFixed(2), userProfile.carbohydrate.toFixed(2), userProfile.fat.toFixed(2)],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -104,22 +139,17 @@ $(function() {
                 display: false
             },
             scales: {
-                xAxes: [{
+                yAxes: [{
                     display: true,
-                    gridLines: {
-                        color: "black"
-                    },
                     ticks: {
                         beginAtZero: true
                     }
                 }],
-                yAxes: [{
-                    display: true,
-                    gridLines: {
-                        color: "black"
-                    }
+                xAxes: [{
+                    display: true
                 }]
             }
         }
     });
+
 });

@@ -1,19 +1,19 @@
-﻿//var userProfile_JSON = window.localStorage.getItem("userProfile");
+﻿var userProfile_JSON = window.localStorage.getItem("userProfile");
 
-//var userProfile = JSON.parse(userProfile_JSON);
+var userProfile = JSON.parse(userProfile_JSON);
 
-//console.log(userProfile);
+console.log(userProfile);
 
-var userProfile = {
-    gender: "Male",
-    bmr: 1800,
-    tdee: 2900,
-    fitnessGoal: "Lose Weight",
-    dca: 2400,
-    macroRatio_protein: 45,
-    macroRatio_carbohydrates: 20,
-    macroRatio_fats: 35
-};
+//var userProfile = {
+//    gender: "Male",
+//    bmr: 1800,
+//    tdee: 2900,
+//    fitnessGoal: "Lose Weight",
+//    dca: 2400,
+//    macroRatio_protein: 45,
+//    macroRatio_carbohydrates: 20,
+//    macroRatio_fats: 35
+//};
 
 // jQuery document ready function
 $(function() {
@@ -46,7 +46,7 @@ $(function() {
             labels: ["Protein", "Carbohydrates", "Fats"],
             datasets: [{
                 label: "Macronutrient Ratios",
-                data: [userProfile.macroRatio_protein, userProfile.macroRatio_carbohydrates, userProfile.macroRatio_fats],
+                data: [userProfile.macroRatio_Protein, userProfile.macroRatio_Carbohydrates, userProfile.macroRatio_Fats],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

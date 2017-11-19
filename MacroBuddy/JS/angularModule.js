@@ -176,6 +176,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
         $scope.fitnessGoalVerification = function(fitnessGoal) {
             if (fitnessGoal != null) {
                 $scope.userProfile.fitnessGoal = fitnessGoal;
+                $scope.setMacroRatios(fitnessGoal);
                 $scope.nextQuestion();
             } else {
                 alert("Please select the fitness goal that you have");
@@ -183,14 +184,38 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
             }
         };
 
+        // Set MacroRatios According to Fitness Goal
+        $scope.setMacroRatios = function(fitnessGoal) {
+            switch (fitnessGoal) {
+                case "Lose Weight":
+                    $scope.userProfile.macroRatio_Protein = parseFloat(0.45);
+                    $scope.userProfile.macroRatio_Carbohydrates = parseFloat(0.20);
+                    $scope.userProfile.macroRatio_Fats = parseFloat(0.35);
+
+                    break;
+                case "Maintain":
+                    $scope.userProfile.macroRatio_Protein = parseFloat(0.30);
+                    $scope.userProfile.macroRatio_Carbohydrates = parseFloat(0.40);
+                    $scope.userProfile.macroRatio_Fats = parseFloat(0.30);
+
+                    break;
+                case "Mass Gain":
+                    $scope.userProfile.macroRatio_Protein = parseFloat(0.30);
+                    $scope.userProfile.macroRatio_Carbohydrates = parseFloat(0.50);
+                    $scope.userProfile.macroRatio_Fats = parseFloat(0.20);
+
+                    break;
+            }
+        };
+
         // Function called on ng-Click of btnGoMB
         $scope.goMacroBuddy = function() {
-            $scope.userProfile.bmr = $scope.calculateBMR($scope.userProfile.gender, $scope.userProfile.weight, $scope.userProfile.height, $scope.userProfile.age);
-            $scope.userProfile.tdee = $scope.calculateTDEE($scope.userProfile.bmr, $scope.userProfile.activityFactor);
-            $scope.userProfile.dailyCalories = $scope.calculateDailyCalories($scope.userProfile.fitnessGoal, $scope.userProfile.tdee);
-            $scope.userProfile.protein = $scope.calculateProtein($scope.userProfile.fitnessGoal, $scope.userProfile.dailyCalories);
-            $scope.userProfile.fat = $scope.calculateFat($scope.userProfile.fitnessGoal, $scope.userProfile.dailyCalories);
-            $scope.userProfile.carbohydrate = $scope.calculateCarb($scope.userProfile.fitnessGoal, $scope.userProfile.dailyCalories);
+            $scope.userProfile.bmr = $scope.calculateBMR();
+            $scope.userProfile.tdee = $scope.calculateTDEE();
+            $scope.userProfile.dailyCalories = $scope.calculateDailyCalories();
+            $scope.userProfile.protein = $scope.calculateProtein();
+            $scope.userProfile.fat = $scope.calculateFat();
+            $scope.userProfile.carbohydrate = $scope.calculateCarb();
 
             // Stringify userProfile object
             var userProfile_JSON = JSON.stringify($scope.userProfile);
@@ -202,84 +227,45 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
             window.location.href = "../HTML/results.html";
         };
 
-        $scope.calculateBMR = function(gender, weight, height, age) {
-            if (gender == "Male") {
-                return 66 + (6.23 * weight) + (12.7 * height) - (6.8 * age);
+        $scope.calculateBMR = function() {
+            if ($scope.userProfile.gender == "Male") {
+                return 66 + (6.23 * $scope.userProfile.weight) + (12.7 * $scope.userProfile.height) - (6.8 * $scope.userProfile.age);
             } else if (gender == "Female") {
-                return 655 + (4.35 * weight) + (4.7 * height) - (4.7 * age);
+                return 655 + (4.35 * $scope.userProfile.weight) + (4.7 * $scope.userProfile.height) - (4.7 * $scope.userProfile.age);
             }
         };
 
-        $scope.calculateTDEE = function(bmr, activityFactor) {
-            return bmr * activityFactor;
+        $scope.calculateTDEE = function() {
+            return $scope.userProfile.bmr * $scope.userProfile.activityFactor;
         };
 
-        $scope.calculateDailyCalories = function(fitnessGoal, tdee) {
-            switch (fitnessGoal) {
+        $scope.calculateDailyCalories = function() {
+            switch ($scope.userProfile.fitnessGoal) {
                 case "Lose Weight":
-                    return tdee - 500;
+                    return $scope.userProfile.tdee - 500;
 
                     break;
                 case "Maintain":
-                    return tdee;
+                    return $scope.userProfile.tdee;
 
                     break;
                 case "Mass Gain":
-                    return tdee + 500;
+                    return $scope.userProfile.tdee + 500;
 
                     break;
             }
         };
 
-        $scope.calculateProtein = function(fitnessGoal, dailyCalories) {
-            switch (fitnessGoal) {
-                case "Lose Weight":
-                    return (0.45 * dailyCalories) / 4;
-
-                    break;
-                case "Maintain":
-                    return (0.3 * dailyCalories) / 4;
-
-                    break;
-                case "Mass Gain":
-                    return (0.3 * dailyCalories) / 4;
-
-                    break;
-            }
+        $scope.calculateProtein = function() {
+            return ($scope.userProfile.macroRatio_Protein * $scope.userProfile.dailyCalories) / 4;
         };
 
-        $scope.calculateFat = function(fitnessGoal, dailyCalories) {
-            switch (fitnessGoal) {
-                case "Lose Weight":
-                    return (0.35 * dailyCalories) / 9;
-
-                    break;
-                case "Maintain":
-                    return (0.3 * dailyCalories) / 9;
-
-                    break;
-                case "Mass Gain":
-                    return (0.2 * dailyCalories) / 9;
-
-                    break;
-            }
+        $scope.calculateFat = function() {
+            return ($scope.userProfile.macroRatio_Fats * $scope.userProfile.dailyCalories) / 9;
         };
 
-        $scope.calculateCarb = function(fitnessGoal, dailyCalories) {
-            switch (fitnessGoal) {
-                case "Lose Weight":
-                    return (0.2 * dailyCalories) / 4;
-
-                    break;
-                case "Maintain":
-                    return (0.4 * dailyCalories) / 4;
-
-                    break;
-                case "Mass Gain":
-                    return (0.5 * dailyCalories) / 4;
-
-                    break;
-            }
+        $scope.calculateCarb = function() {
+            return ($scope.userProfile.macroRatio_Carbohydrates * $scope.userProfile.dailyCalories) / 4;
         };
 
     }]);

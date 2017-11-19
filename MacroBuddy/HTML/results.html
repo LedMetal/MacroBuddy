@@ -13,7 +13,7 @@
                 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
                 crossorigin="anonymous"></script>
         <script>!window.jQuery && document.write('<script src="../JS/jquery-1.4.2.min.js"><\/script>')</script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
         <script src="../JS/results.js"></script>
     </head>
     <body>
@@ -24,6 +24,44 @@
                 <h1 style="display: inline-block; color: white">MacroBuddy Results</h1>
             </center>
         </div>
+
+        <table class="table table-bordered">
+            <thead style="text-align: center;">
+                <tr>
+                    <th colspan=2>
+                        <strong>B</strong>asal <strong>M</strong>etabolic <strong>R</strong>ate
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center;">
+                        <i>Definition</i>
+                    </td>
+                    <td>
+                        BMR is the amount of energy expended at rest daily
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        <i>Formula</i>
+                    </td>
+                    <td id="bmrFormula">
+                        66 + (6.23 x <strong>weight (lbs)</strong>) + (12.7 x <strong>height (inch)</strong>) - (6.8 x <strong>age</strong>)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        <i>Links</i>
+                    </td>
+                    <td>
+                        <a href="https://en.wikipedia.org/wiki/Basal_metabolic_rate">Wikipedia</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
         <!-- Footer Bar -->
         <div id="footerBar" class="footer fixed-bottom">

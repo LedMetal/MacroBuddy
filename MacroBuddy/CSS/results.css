@@ -15,6 +15,23 @@ body {
     padding-bottom: 150px;
 }
 
+thead {
+    text-align: center;
+}
+
+thead tr th {
+    font-size: 25px;
+}
+
+tbody {
+    background-color: rgb(75,75,75);
+}
+
+.columnLabel {
+    text-align: center;
+    font-style: italic;
+}
+
 #footerBar {
     background-color: rgb(50,50,50);
 }

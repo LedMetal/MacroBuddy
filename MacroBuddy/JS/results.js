@@ -5,7 +5,8 @@
 //console.log(userProfile);
 
 var userProfile = {
-    gender: "Female"
+    gender: "Male",
+    bmr: 1800
 };
 
 // jQuery document ready function
@@ -16,7 +17,9 @@ $(function() {
 
     } else {
         $('#bmrFormula')[0].innerHTML = "655 + (4.35 x <strong>weight (lbs)</strong>) + (4.7 x <strong>height (inch)</strong>) - (4.7 x <strong>age</strong>)";
-
     }
+
+    // Display BMR Result
+    $('#bmrResult')[0].innerHTML = "<span style='font-size: 20px;'><strong>" + userProfile.bmr + "</strong></span>";
 
 });

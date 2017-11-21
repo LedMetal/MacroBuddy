@@ -38,7 +38,7 @@ $(function() {
     $('#fitnessGoal')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.fitnessGoal + "</strong></span>";
 
     // Display DCA Result
-    $('#dailyCaloricAllowance')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.dca.toFixed(2) + "</strong></span>";
+    $('#dailyCaloricAllowance')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.dca.toFixed(2) + " kCal</strong></span>";
 
     Chart.defaults.global.defaultFontColor = "white";
 

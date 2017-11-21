@@ -76,8 +76,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\main.css" />
+    <Content Include="CSS\mealPrep.css" />
     <Content Include="CSS\results.css" />
     <Content Include="HTML\main.html" />
+    <Content Include="HTML\mealPrep.html" />
     <Content Include="HTML\results.html" />
     <Content Include="Images\banner.png" />
     <Content Include="Images\favicon.ico" />
@@ -85,6 +87,7 @@
     <Content Include="JS\angularModule.js" />
     <Content Include="JS\jquery-3.2.1.min.js" />
     <Content Include="JS\main.js" />
+    <Content Include="JS\mealPrep.js" />
     <Content Include="JS\results.js" />
     <Content Include="Web.config" />
   </ItemGroup>

@@ -1,19 +1,22 @@
-﻿var userProfile_JSON = window.localStorage.getItem("userProfile");
+﻿//var userProfile_JSON = window.localStorage.getItem("userProfile");
 
-var userProfile = JSON.parse(userProfile_JSON);
+//var userProfile = JSON.parse(userProfile_JSON);
 
-console.log(userProfile);
+//console.log(userProfile);
 
-//var userProfile = {
-//    gender: "Male",
-//    bmr: 1800,
-//    tdee: 2900,
-//    fitnessGoal: "Lose Weight",
-//    dca: 2400,
-//    macroRatio_protein: 45,
-//    macroRatio_carbohydrates: 20,
-//    macroRatio_fats: 35
-//};
+var userProfile = {
+    gender: "Male",
+    bmr: 1800,
+    tdee: 2900,
+    fitnessGoal: "Lose Weight",
+    dca: 2400,
+    macroRatio_Protein: 45,
+    macroRatio_Carbohydrates: 20,
+    macroRatio_Fats: 35,
+    protein: 250,
+    carbohydrate: 150,
+    fat: 75
+};
 
 // jQuery document ready function
 $(function() {
@@ -32,10 +35,10 @@ $(function() {
     $('#tdeeResult')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.tdee.toFixed(2) + " kCal</strong></span>";
 
     // Display Fitness Goal
-    $('#fitnessGoal')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.fitnessGoal + " </strong></span>";
+    $('#fitnessGoal')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.fitnessGoal + "</strong></span>";
 
     // Display DCA Result
-    $('#dailyCaloricAllowance')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.dailyCalories.toFixed(2) + " </strong></span>";
+    $('#dailyCaloricAllowance')[0].innerHTML = "<span style='font-size: 20px'><strong>" + userProfile.dca.toFixed(2) + "</strong></span>";
 
     Chart.defaults.global.defaultFontColor = "white";
 
@@ -67,7 +70,11 @@ $(function() {
             },
             scales: {
                 xAxes: [{
-                    display: false,
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Calories per Gram (kCal)"
+                    },
+                    display: true,
                     ticks: {
                         beginAtZero: true
                     }
@@ -76,7 +83,7 @@ $(function() {
         }
     });
 
-    // MacroNutrient Breakdown Pie Graph
+    // MacroRatios Breakdown Pie Graph
     var ctx_macroBreakdown = $('#macroBreakdown');
     var macroBreakdownChart = new Chart(ctx_macroBreakdown, {
         type: "pie",
@@ -113,6 +120,7 @@ $(function() {
         }
     });
 
+    // MacroBuddy Personal Results Bar Graph
     var ctx_macroBuddyResults = $('#macroBuddyResults');
     var macroBuddyResultsChart = new Chart(ctx_macroBuddyResults, {
         type: "bar",
@@ -140,6 +148,10 @@ $(function() {
             },
             scales: {
                 yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Daily Intake (g)"
+                    },
                     display: true,
                     ticks: {
                         beginAtZero: true

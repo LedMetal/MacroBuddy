@@ -1,22 +1,26 @@
-﻿//var userProfile_JSON = window.localStorage.getItem("userProfile");
+﻿var userProfile_JSON = window.localStorage.getItem("userProfile");
 
-//var userProfile = JSON.parse(userProfile_JSON);
+var userProfile = JSON.parse(userProfile_JSON);
 
-//console.log(userProfile);
+console.log(userProfile);
 
-var userProfile = {
-    gender: "Male",
-    bmr: 1800,
-    tdee: 2900,
-    fitnessGoal: "Lose Weight",
-    dca: 2400,
-    macroRatio_Protein: 45,
-    macroRatio_Carbohydrates: 20,
-    macroRatio_Fats: 35,
-    protein: 250,
-    carbohydrate: 150,
-    fat: 75
-};
+//var userProfile = {
+//    gender: "Male",
+//    bmr: 1800,
+//    tdee: 2900,
+//    fitnessGoal: "Lose Weight",
+//    dca: 2400,
+//    macroRatio_Protein: 45,
+//    macroRatio_Carbohydrates: 20,
+//    macroRatio_Fats: 35,
+//    protein: 250,
+//    carbohydrate: 150,
+//    fat: 75
+//};
+
+var goHome = function() {
+    window.location.href = "../HTML/main.html";
+}
 
 // jQuery document ready function
 $(function() {

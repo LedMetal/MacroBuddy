@@ -32,6 +32,14 @@ tbody {
     font-style: italic;
 }
 
+hr {
+    border: 1px solid black;
+}
+
+input .btn {
+    width: 100px;
+}
+
 #footerBar {
     background-color: rgb(50,50,50);
 }

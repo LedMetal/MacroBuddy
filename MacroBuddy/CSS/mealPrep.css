@@ -39,6 +39,11 @@ img {
     width: 200px;
 }
 
+input .btn {
+    display: inline-block;
+    width: 100px;
+}
+
 #footerBar {
     background-color: rgb(50,50,50);
 }

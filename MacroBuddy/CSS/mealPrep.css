@@ -15,6 +15,14 @@
     width: 190px;
 }
 
+p {
+    font-size: large;
+}
+
+hr {
+    border: 1px solid black;
+}
+
 #footerBar {
     background-color: rgb(50,50,50);
 }

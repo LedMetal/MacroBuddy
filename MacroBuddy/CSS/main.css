@@ -21,6 +21,10 @@ body {
     width: 80%;
 }
 
+p {
+    font-size: large;
+}
+
 hr {
     border-color: black
 }

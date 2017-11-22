@@ -19,6 +19,10 @@ p {
     font-size: large;
 }
 
+#orderedList {
+    list-style-position: inside;
+}
+
 hr {
     border: 1px solid black;
 }

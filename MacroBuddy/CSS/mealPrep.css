@@ -23,6 +23,14 @@ hr {
     border: 1px solid black;
 }
 
+th {
+    text-align: center;
+}
+
+img {
+    width: 200px;
+}
+
 #footerBar {
     background-color: rgb(50,50,50);
 }

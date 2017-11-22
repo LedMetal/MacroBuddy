@@ -1,23 +1,18 @@
-﻿#headerBar {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: rgb(50,50,50);
-}
-
-#logo {
-    width: 10%;
-    display: inline-block;
-}
-
-body {
+﻿body {
     font-size: medium;
     color: white;
     background-color: rgb(29, 139, 107);
     padding-bottom: 150px;
 }
 
-h1 {
-    display: inline-block;
+#headerBar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(50,50,50);
+}
+
+#logo {
+    width: 190px;
 }
 
 thead {

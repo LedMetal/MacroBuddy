@@ -5,6 +5,16 @@
     padding-bottom: 150px;
 }
 
+#headerBar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(50,50,50);
+}
+
+#logo {
+    width: 190px;
+}
+
 #footerBar {
     background-color: rgb(50,50,50);
 }

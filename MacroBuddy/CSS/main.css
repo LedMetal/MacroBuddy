@@ -25,6 +25,10 @@ p {
     font-size: large;
 }
 
+#question {
+    font-size: 25px;
+}
+
 hr {
     border: 1px solid black;
 }

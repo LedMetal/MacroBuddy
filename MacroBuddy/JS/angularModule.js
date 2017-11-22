@@ -230,7 +230,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
         $scope.calculateBMR = function() {
             if ($scope.userProfile.gender == "Male") {
                 return 66 + (6.23 * $scope.userProfile.weight) + (12.7 * $scope.userProfile.height) - (6.8 * $scope.userProfile.age);
-            } else if (gender == "Female") {
+            } else if ($scope.userProfile.gender == "Female") {
                 return 655 + (4.35 * $scope.userProfile.weight) + (4.7 * $scope.userProfile.height) - (4.7 * $scope.userProfile.age);
             }
         };

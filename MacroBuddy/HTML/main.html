@@ -52,6 +52,49 @@
                 <h3>Let's Start With Your Information</h3>
                 <p>Give MacroBuddy some basic information to get started!</p>
                 <p id="question">What is your <strong>name</strong>?</p>
+
+                <div style="display: inline-block;">
+                    <!-- Display Table -->
+                    <table style="font-size: larger" class="table-striped">
+                        <tbody>
+                            <tr id="trName" style="display: table-row;">
+                                <td>
+                                    My Name Is {{ tempName }}
+                                </td>
+                            </tr>
+                            <tr id="trGender" style="display: none;">
+                                <td>
+                                    I Am A {{ tempGender }}
+                                </td>
+                            </tr>
+                            <tr id="trAge" style="display: none;">
+                                <td>
+                                    I Am {{ userProfile.age }} Years Old
+                                </td>
+                            </tr>
+                            <tr id="trHeight" style="display: none;">
+                                <td>
+                                    I Am {{ tempFeet }} Feet {{ tempInches }} Inches Tall
+                                </td>
+                            </tr>
+                            <tr id="trWeight" style="display: none;">
+                                <td>
+                                    I Weigh {{ tempWeight }} Pounds
+                                </td>
+                            </tr>
+                            <tr id="trActivityFactor" style="display: none;">
+                                <td>
+                                    My Activity Factor Is {{ tempActivityFactor }}
+                                </td>
+                            </tr>
+                            <tr id="trFitnessGoal" style="display: none;">
+                                <td>
+                                    My Fitness Goal Is To {{ tempFitnessGoal }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             
                 <!-- User Input Table -->
                 <div id="divInputTable" style="display: inline-block;">
@@ -161,49 +204,6 @@
                                 <input type="button" id="btnEnter" value="ENTER" ng-click="fitnessGoalVerification(tempFitnessGoal)" />
                             </td>
                         </tr>
-                    </table>
-                </div>
-
-                <div style="display: inline-block;">
-                    <!-- Display Table -->
-                    <table style="font-size: larger" class="table-striped">
-                        <tbody>
-                            <tr id="trName" style="display: table-row;">
-                                <td>
-                                    My Name Is {{ tempName }}
-                                </td>
-                            </tr>
-                            <tr id="trGender" style="display: none;">
-                                <td>
-                                    I Am A {{ tempGender }}
-                                </td>
-                            </tr>
-                            <tr id="trAge" style="display: none;">
-                                <td>
-                                    I Am {{ userProfile.age }} Years Old
-                                </td>
-                            </tr>
-                            <tr id="trHeight" style="display: none;">
-                                <td>
-                                    I Am {{ tempFeet }} Feet {{ tempInches }} Inches Tall
-                                </td>
-                            </tr>
-                            <tr id="trWeight" style="display: none;">
-                                <td>
-                                    I Weigh {{ tempWeight }} Pounds
-                                </td>
-                            </tr>
-                            <tr id="trActivityFactor" style="display: none;">
-                                <td>
-                                    My Activity Factor Is {{ tempActivityFactor }}
-                                </td>
-                            </tr>
-                            <tr id="trFitnessGoal" style="display: none;">
-                                <td>
-                                    My Fitness Goal Is To {{ tempFitnessGoal }}
-                                </td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
 

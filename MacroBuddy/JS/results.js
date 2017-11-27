@@ -22,6 +22,10 @@ var goHome = function() {
     window.location.href = "../HTML/main.html";
 }
 
+var goMealPrep = function() {
+    window.location.href = "../HTML/mealPrep.html";
+}
+
 // jQuery document ready function
 $(function() {
     // Display appropriate BMR formula

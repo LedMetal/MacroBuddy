@@ -132,7 +132,7 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                     $scope.userProfile.age = difference;
                     $scope.nextQuestion();
                 } else {
-                    alert("The age range applicable for MacroBuddy's advice is ages 16-50. Please consult a physician or nutritionist for more information.");
+                    alert("The age range applicable for MacroBuddy's advice is ages 16-50\n\nPlease consult a physician or nutritionist for more information.");
                     $('#tbDate').focus();
                 }
 
@@ -156,8 +156,15 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
         $scope.weightVerification = function(weight) {
             if (weight != null) {
                 if (/^[0-9]+[\.]?[0-9]+$/.test(weight)) {
-                    $scope.userProfile.weight = parseInt(weight);
-                    $scope.nextQuestion();
+                    // Check if weight is within 100-300 lbs
+                    if (weight >= 100 && weight <= 300) {
+                        $scope.userProfile.weight = parseInt(weight);
+                        $scope.nextQuestion();
+                    } else {
+                        alert("The weight range applicable for MacroBuddy's advice is 100-300 lbs\n\nPlease consult a doctor, physician or nutritionist for further help");
+                        $("#tbWeight")[0].focus();
+                    }
+
                 } else {
                     alert("Please enter a valid weight in the given field");
                     $("#tbWeight")[0].focus();

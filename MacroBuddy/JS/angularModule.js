@@ -127,8 +127,15 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
                 var today = new Date();
                 var difference = Math.floor((today - birthday) / (1000 * 3600 * 24 * 365));
 
-                $scope.userProfile.age = difference;
-                $scope.nextQuestion();
+                // Check if age falls between 16-50
+                if (difference >= 16 && difference <= 50) {
+                    $scope.userProfile.age = difference;
+                    $scope.nextQuestion();
+                } else {
+                    alert("The age range applicable for MacroBuddy's advice is ages 16-50. Please consult a physician or nutritionist for more information.");
+                    $('#tbDate').focus();
+                }
+
             } else {
                 alert("Please enter your birthday in the given field");
                 $('#tbDate').focus();

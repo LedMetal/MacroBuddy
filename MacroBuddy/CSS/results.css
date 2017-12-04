@@ -1,45 +1,55 @@
-﻿body {
+﻿/*Body Tag*/
+body {
     font-size: medium;
     color: white;
     background-color: rgb(29, 139, 107);
     padding-bottom: 150px;
 }
 
+/*Header*/
 #headerBar {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: rgb(50,50,50);
 }
 
+/*MacroBuddy Square Logo*/
 #logo {
     width: 190px;
 }
 
+/*Table Head Tag*/
 thead {
     text-align: center;
 }
 
+/*Table Head and Row Tags*/
 thead tr th {
     font-size: 25px;
 }
 
+/*Table Body Tag*/
 tbody {
     background-color: rgb(75,75,75);
 }
 
+/*Column Label Table Cell Class (ie. Definition, Formula, Result)*/
 .columnLabel {
     text-align: center;
     font-style: italic;
 }
 
+/*Horizontal Rule Tag*/
 hr {
     border: 1px solid black;
 }
 
+/*Button Input Tag Class*/
 input .btn {
     width: 100px;
 }
 
+/*Footer*/
 #footerBar {
     background-color: rgb(50,50,50);
 }

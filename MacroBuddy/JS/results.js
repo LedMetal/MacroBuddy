@@ -4,6 +4,7 @@ var userProfile = JSON.parse(userProfile_JSON);
 
 console.log(userProfile);
 
+// DEBUG PURPOSE 
 //var userProfile = {
 //    gender: "Male",
 //    bmr: 1800,

@@ -1,49 +1,60 @@
-﻿body {
+﻿/*Body Tag*/
+body {
     font-size: medium;
     color: white;
     background-color: rgb(29, 139, 107);
     padding-bottom: 150px;
 }
 
+/*Header*/
 #headerBar {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: rgb(50,50,50);
 }
 
+/*MacroBuddy Square Logo*/
 #logo {
     width: 190px;
 }
 
+/*Paragraph Tag*/
 p {
     font-size: large;
 }
 
+/*Ordered List Tag*/
 #orderedList {
     list-style-position: inside;
 }
 
+/*Horizontal Rule Tag*/
 hr {
     border: 1px solid black;
 }
 
+/*Main Table Title (ie. Suggested Servings Per Meal)*/
 #tableTitle {
     font-size: 35px;
 }
 
+/*Table Head Tag*/
 th {
     text-align: center;
 }
 
+/*Image Tag*/
 img {
     width: 200px;
 }
 
+/*Input Tag - Button Class*/
 input .btn {
     display: inline-block;
     width: 100px;
 }
 
+/*Footer*/
 #footerBar {
     background-color: rgb(50,50,50);
 }

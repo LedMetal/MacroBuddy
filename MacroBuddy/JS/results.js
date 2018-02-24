@@ -4,21 +4,6 @@ var userProfile = JSON.parse(userProfile_JSON);
 
 console.log(userProfile);
 
-// DEBUG PURPOSE 
-//var userProfile = {
-//    gender: "Male",
-//    bmr: 1800,
-//    tdee: 2900,
-//    fitnessGoal: "Lose Weight",
-//    dca: 2400,
-//    macroRatio_Protein: 45,
-//    macroRatio_Carbohydrates: 20,
-//    macroRatio_Fats: 35,
-//    protein: 250,
-//    carbohydrate: 150,
-//    fat: 75
-//};
-
 var goHome = function() {
     window.location.href = "../HTML/main.html";
 }

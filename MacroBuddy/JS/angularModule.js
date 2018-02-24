@@ -17,6 +17,31 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
             fitnessGoal: ""
         };
 
+        // Function called on ng-Click of btnGoMB
+        $scope.goMacroBuddy = function() {
+            $scope.userProfile.bmr = $scope.calculateBMR();
+            $scope.userProfile.tdee = $scope.calculateTDEE();
+            $scope.userProfile.dailyCalories = $scope.calculateDailyCalories();
+            $scope.userProfile.protein = $scope.calculateProtein();
+            $scope.userProfile.fat = $scope.calculateFat();
+            $scope.userProfile.carbohydrate = $scope.calculateCarb();
+
+            $.post('../PHP/connect.php', { name: $scope.userProfile.name, gender: $scope.userProfile.gender, age: $scope.userProfile.age, height: $scope.userProfile.height, weight: $scope.userProfile.weight, activityFactor: $scope.userProfile.activityFactor, fitnessGoal: $scope.userProfile.fitnessGoal, bmr: $scope.userProfile.bmr, tdee: $scope.userProfile.tdee, dailyCalories: $scope.userProfile.dailyCalories, macroRatio_Carbohydrates: $scope.userProfile.macroRatio_Carbohydrates, macroRatio_Fats: $scope.userProfile.macroRatio_Fats, macroRatio_Protein: $scope.userProfile.macroRatio_Protein, protein: $scope.userProfile.protein, fat: $scope.userProfile.fat, carbohydrate: $scope.userProfile.carbohydrate },
+                function(data) {
+                    console.log(data);
+                }
+            );
+
+            // Stringify userProfile object
+            var userProfile_JSON = JSON.stringify($scope.userProfile);
+
+            // Set localStorage for userProfile_JSON
+            window.localStorage.setItem("userProfile", userProfile_JSON);
+
+            // Navigate to results page
+            window.location.href = "HTML/results.html";
+        };
+
         // Go to the next question (ng-Click function on button)
         $scope.nextQuestion = function() {
             $scope.question++;
@@ -220,25 +245,6 @@ var myApp = angular.module('myApp', ['ngComboDatePicker'])
 
                     break;
             }
-        };
-
-        // Function called on ng-Click of btnGoMB
-        $scope.goMacroBuddy = function() {
-            $scope.userProfile.bmr = $scope.calculateBMR();
-            $scope.userProfile.tdee = $scope.calculateTDEE();
-            $scope.userProfile.dailyCalories = $scope.calculateDailyCalories();
-            $scope.userProfile.protein = $scope.calculateProtein();
-            $scope.userProfile.fat = $scope.calculateFat();
-            $scope.userProfile.carbohydrate = $scope.calculateCarb();
-
-            // Stringify userProfile object
-            var userProfile_JSON = JSON.stringify($scope.userProfile);
-
-            // Set localStorage for userProfile_JSON
-            window.localStorage.setItem("userProfile", userProfile_JSON);
-
-            // Navigate to results page
-            window.location.href = "../HTML/results.html";
         };
 
         $scope.calculateBMR = function() {

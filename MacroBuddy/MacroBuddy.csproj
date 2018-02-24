@@ -94,7 +94,6 @@
     <Content Include="JS\main.js" />
     <Content Include="JS\mealPrep.js" />
     <Content Include="JS\results.js" />
-    <Content Include="PHP\connect.php" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

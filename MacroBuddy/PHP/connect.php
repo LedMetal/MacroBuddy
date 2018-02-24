@@ -1,10 +1,8 @@
-﻿<?php
-	// This file contains sensitive information, therefore not included in GitHub repo
-	// It contains the definition for connectToDB()
-	include "database.php";
-?>
-
 <?php
+    // This file contains sensitive information, therefore not included in GitHub repo
+    // It contains the definition for connectToDB()
+    include "database.php";
+
     $conn = connectToDB();
     
     // _POST Variables

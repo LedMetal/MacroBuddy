@@ -11,7 +11,7 @@ Well, *MacroBuddy* is here to alleviate you from all the calculations and formul
 
 ## Development
 ### Client-Side
-*MacroBuddy* utilizes various web development languages and frameworks to present an interactive and data rich website. These technologies include *HTML*, *JavaScript*, *AngularJS*, *jQuery*, *ChartJS*, *CSS*, and *Bootstrap*.
+*MacroBuddy* utilizes various web development languages and frameworks to present an interactive and data rich website. These technologies include *HTML*, *JavaScript*, *jQuery*, *ChartJS*, *CSS*, and *Bootstrap*.
 
 ### Server-Side
 *MacroBuddy* is live on the author's personal domain, hosted by [HostGator](https://www.hostgator.com/). When a user successfully calculates his/her macronutrient information, the data gets saved on a database on the server. This is to keep their data saved for when *MacroBuddy - Mobile* is released. In order to communicate with the *MySQL* databases, the connection is made through *PHP*.
@@ -20,7 +20,7 @@ Well, *MacroBuddy* is here to alleviate you from all the calculations and formul
 It is intended to create a mobile application for *MacroBUddy*, in which users can calculate and access their profiles with all calculated data from anywhere. Furthermore, a new workout tracking system is in development, where a user can keep track of every workout, whether it be cardiovascular or weightlifting. Contact author for further questions about what is to come!
 
 ## Built With
-* _Programming Language_: **HTML**, **JavaScript**, **jQuery**, **Angular**, **ChartJS**, **PHP**, **MySQL**, **CSS**, **Bootstrap**
+* _Programming Language_: **HTML**, **JavaScript**, **jQuery**, **ChartJS**, **PHP**, **MySQL**, **CSS**, **Bootstrap**
 * _IDE_: **Visual Studio Code**, **phpMyAdmin**
 
 ## Author
